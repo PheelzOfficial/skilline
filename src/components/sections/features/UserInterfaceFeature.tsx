@@ -1,4 +1,6 @@
 import svgPaths from "@/assets/svg-paths";
+import FeatureRow from "@/components/sections/features/FeatureRow";
+import FigmaArt from "@/components/ui/FigmaArt";
 import {
   imgPortraitTeacherGivingOnlineClass1,
   imgPortraitTeacherGivingOnlineClass3,
@@ -12,7 +14,7 @@ import imgImage10 from "@/assets/images/image-10.png";
 import imgImage11 from "@/assets/images/image-11.png";
 import imgImage13 from "@/assets/images/image-13.png";
 
-function Group67() {
+function ClassroomWindowChrome() {
   return (
     <div className="absolute h-[483px] left-[170px] top-[4287px] w-[783px]">
       <svg className="absolute block inset-0 size-full" fill="none" height="483" preserveAspectRatio="none" viewBox="0 0 783 483" width="783">
@@ -42,7 +44,7 @@ function Group67() {
   );
 }
 
-function Group55() {
+function PresentButton() {
   return (
     <div className="absolute contents left-[214.66px] top-[4667.67px]">
       <div className="absolute bg-[#3465e1] h-[51.068px] left-[214.66px] rounded-[51.068px] shadow-[0px_8.511px_20.427px_0px_rgba(52,101,225,0.3)] top-[4667.67px] w-[153.203px]" />
@@ -53,7 +55,7 @@ function Group55() {
   );
 }
 
-function Phone() {
+function PhoneIcon() {
   return (
     <div className="absolute left-[calc(16.67%+122.56px)] size-[17.023px] top-[4685px]" data-name="phone 1">
       <svg className="absolute block inset-0 size-full" fill="none" height="17.0225" preserveAspectRatio="none" viewBox="0 0 17.0225 17.0225" width="17.0225">
@@ -70,7 +72,7 @@ function Phone() {
   );
 }
 
-function Group56() {
+function CallButton() {
   return (
     <div className="absolute contents left-[calc(16.67%+72px)] top-[4661px]">
       <div className="absolute bg-[#ffd4e1] h-[65px] left-[calc(16.67%+72px)] rounded-[51.068px] top-[4661px] w-[169px]" />
@@ -78,12 +80,12 @@ function Group56() {
       <p className="font-nunito font-bold [word-break:break-word] absolute h-[29.789px] leading-[normal] left-[calc(16.67%+148.94px)] text-[22.129px] text-white top-[4679px] w-[41.705px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Call
       </p>
-      <Phone />
+      <PhoneIcon />
     </div>
   );
 }
 
-function MaskGroup1() {
+function InstructorPhoto() {
   return (
     <div className="absolute contents left-[calc(8.33%+104.07px)] top-[4406.16px]" data-name="Mask Group">
       <div className="absolute h-[227.081px] left-[calc(8.33%+65.7px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[38.369px_0px] mask-size-[234.911px_227.081px] rounded-[17.023px] top-[4406.16px] w-[339.055px]" style={{ maskImage: `url("${imgPortraitTeacherGivingOnlineClass1}")` }} data-name="portrait-teacher-giving-online-class 1">
@@ -93,7 +95,7 @@ function MaskGroup1() {
   );
 }
 
-function MaskGroup2() {
+function InstructorPhotoHighlight() {
   return (
     <div className="absolute contents left-[calc(8.33%+93.86px)] top-[4379.77px]" data-name="Mask Group">
       <div className="absolute h-[246.827px] left-[212.15px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[41.705px_0px] mask-size-[255.338px_246.827px] rounded-[17.023px] top-[4379.77px] w-[368.538px]" style={{ maskImage: `url("${imgPortraitTeacherGivingOnlineClass3}")` }} data-name="portrait-teacher-giving-online-class 1">
@@ -103,7 +105,7 @@ function MaskGroup2() {
   );
 }
 
-function Group58() {
+function InstructorSignalBars() {
   return (
     <div className="absolute contents left-[calc(8.33%+107.55px)] top-[4603.21px]">
       <div className="absolute bg-white h-[3.882px] left-[calc(8.33%+107.55px)] rounded-[0.555px] top-[4607.09px] w-[1.664px]" />
@@ -113,7 +115,7 @@ function Group58() {
   );
 }
 
-function Group61() {
+function InstructorNamePlate() {
   return (
     <div className="absolute contents left-[calc(8.33%+102px)] top-[4596px]">
       <div className="absolute backdrop-blur-[5.546px] bg-[rgba(201,211,231,0.4)] h-[22px] left-[calc(8.33%+102px)] rounded-[5.546px] top-[4596px] w-[170px]" />
@@ -124,22 +126,22 @@ function Group61() {
       <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[normal] left-[calc(8.33%+128px)] text-[10px] text-white top-[4600px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Instructor
       </p>
-      <Group58 />
+      <InstructorSignalBars />
     </div>
   );
 }
 
-function Group57() {
+function InstructorTile() {
   return (
     <div className="absolute contents left-[calc(8.33%+93.86px)] top-[4379.77px]">
-      <MaskGroup1 />
-      <MaskGroup2 />
-      <Group61 />
+      <InstructorPhoto />
+      <InstructorPhotoHighlight />
+      <InstructorNamePlate />
     </div>
   );
 }
 
-function MaskGroup3() {
+function AdamLevinPhoto() {
   return (
     <div className="absolute contents left-[calc(41.67%+47px)] top-[4340.02px]" data-name="Mask Group">
       <div className="absolute h-[195.267px] left-[calc(41.67%+23.43px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[23.567px_0px] mask-size-[202px_195.267px] top-[4340.02px] w-[250.48px]" style={{ maskImage: `url("${imgImage8}")` }} data-name="image 8">
@@ -149,7 +151,7 @@ function MaskGroup3() {
   );
 }
 
-function Group60() {
+function AdamLevinSignalBars() {
   return (
     <div className="absolute contents left-[calc(41.67%+64.51px)] top-[4507px]">
       <div className="absolute bg-white h-[4.713px] left-[calc(41.67%+64.51px)] rounded-[0.673px] top-[4511.72px] w-[2.02px]" />
@@ -159,28 +161,28 @@ function Group60() {
   );
 }
 
-function Group59() {
+function AdamLevinNamePlate() {
   return (
     <div className="absolute contents left-[calc(41.67%+57.77px)] top-[4498.25px]">
       <div className="absolute backdrop-blur-[6.733px] bg-[rgba(201,211,231,0.4)] h-[26.26px] left-[calc(41.67%+57.77px)] rounded-[6.733px] top-[4498.25px] w-[102.347px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[18.18px] leading-[normal] left-[calc(41.67%+79.99px)] text-[13.467px] text-white top-[4502.29px] w-[73.393px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Adam Levin
       </p>
-      <Group60 />
+      <AdamLevinSignalBars />
     </div>
   );
 }
 
-function Group64() {
+function AdamLevinTile() {
   return (
     <div className="absolute contents left-[calc(41.67%+47px)] top-[4340.02px]">
-      <MaskGroup3 />
-      <Group59 />
+      <AdamLevinPhoto />
+      <AdamLevinNamePlate />
     </div>
   );
 }
 
-function MaskGroup4() {
+function TamaraClarkePhoto() {
   return (
     <div className="absolute contents left-[calc(25%+145.76px)] top-[4379.77px]" data-name="Mask Group">
       <div className="absolute h-[157.501px] left-[calc(25%+132.45px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[13.31px_-3.327px] mask-size-[166.374px_160.828px] top-[4383.1px] w-[192.994px]" style={{ maskImage: `url("${imgImage7}")` }} data-name="image 7">
@@ -190,7 +192,7 @@ function MaskGroup4() {
   );
 }
 
-function Group65() {
+function TamaraClarkeSignalBars() {
   return (
     <div className="absolute contents left-[calc(25%+160.18px)] top-[4517.31px]">
       <div className="absolute bg-white h-[3.882px] left-[calc(25%+160.18px)] rounded-[0.555px] top-[4521.19px] w-[1.664px]" />
@@ -200,28 +202,28 @@ function Group65() {
   );
 }
 
-function Group62() {
+function TamaraClarkeNamePlate() {
   return (
     <div className="absolute contents left-[calc(25%+154.63px)] top-[4510.1px]">
       <div className="absolute backdrop-blur-[5.546px] bg-[rgba(201,211,231,0.4)] h-[21.629px] left-[calc(25%+154.63px)] rounded-[5.546px] top-[4510.1px] w-[97.052px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[14.974px] leading-[normal] left-[calc(25%+172.93px)] text-[11.092px] text-white top-[4513.43px] w-[73.205px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Tamara Clarke
       </p>
-      <Group65 />
+      <TamaraClarkeSignalBars />
     </div>
   );
 }
 
-function Group63() {
+function TamaraClarkeTile() {
   return (
     <div className="absolute contents left-[calc(25%+145.76px)] top-[4379.77px]">
-      <MaskGroup4 />
-      <Group62 />
+      <TamaraClarkePhoto />
+      <TamaraClarkeNamePlate />
     </div>
   );
 }
 
-function MaskGroup5() {
+function HumbertHollandPhoto() {
   return (
     <div className="absolute contents left-[calc(25%+145.76px)] top-[4565.56px]" data-name="Mask Group">
       <div className="absolute h-[250.116px] left-[calc(25%+145.76px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[166.374px_160.828px] top-[4565.56px] w-[166.374px]" style={{ maskImage: `url("${imgImage7}")` }} data-name="image 11">
@@ -231,7 +233,7 @@ function MaskGroup5() {
   );
 }
 
-function Group69() {
+function HumbertHollandSignalBars() {
   return (
     <div className="absolute contents left-[calc(25%+160.18px)] top-[4703.09px]">
       <div className="absolute bg-white h-[3.882px] left-[calc(25%+160.18px)] rounded-[0.555px] top-[4706.98px] w-[1.664px]" />
@@ -241,28 +243,28 @@ function Group69() {
   );
 }
 
-function Group68() {
+function HumbertHollandNamePlate() {
   return (
     <div className="absolute contents left-[calc(25%+154.63px)] top-[4695.88px]">
       <div className="absolute backdrop-blur-[5.546px] bg-[rgba(201,211,231,0.4)] h-[21.629px] left-[calc(25%+154.63px)] rounded-[5.546px] top-[4695.88px] w-[113.134px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[14.974px] leading-[normal] left-[calc(25%+172.93px)] text-[11.092px] text-white top-[4699.21px] w-[89.287px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Humbert Holland
       </p>
-      <Group69 />
+      <HumbertHollandSignalBars />
     </div>
   );
 }
 
-function Group66() {
+function HumbertHollandTile() {
   return (
     <div className="absolute contents left-[calc(25%+145.76px)] top-[4565.56px]">
-      <MaskGroup5 />
-      <Group68 />
+      <HumbertHollandPhoto />
+      <HumbertHollandNamePlate />
     </div>
   );
 }
 
-function MaskGroup6() {
+function PatriciaMendozaPhoto() {
   return (
     <div className="absolute contents left-[calc(41.67%+26px)] top-[4577px]" data-name="Mask Group">
       <div className="absolute left-[calc(33.33%+135.6px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[50.4px_36.001px] mask-size-[240px_232px] size-[340.8px] top-[4541px]" style={{ maskImage: `url("${imgImage12}")` }} data-name="image 10">
@@ -272,7 +274,7 @@ function MaskGroup6() {
   );
 }
 
-function Group73() {
+function PatriciaMendozaSignalBars() {
   return (
     <div className="absolute contents left-[calc(41.67%+46.8px)] top-[4775.4px]">
       <div className="absolute bg-white h-[5.6px] left-[calc(41.67%+46.8px)] rounded-[0.8px] top-[4781px] w-[2.4px]" />
@@ -282,28 +284,28 @@ function Group73() {
   );
 }
 
-function Group72() {
+function PatriciaMendozaNamePlate() {
   return (
     <div className="absolute contents left-[calc(41.67%+38.8px)] top-[4765px]">
       <div className="absolute backdrop-blur-[8px] bg-[rgba(201,211,231,0.4)] h-[31.2px] left-[calc(41.67%+38.8px)] rounded-[8px] top-[4765px] w-[159.2px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[21.6px] leading-[normal] left-[calc(41.67%+65.2px)] text-[16px] text-white top-[4769.8px] w-[124.8px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Patricia Mendoza
       </p>
-      <Group73 />
+      <PatriciaMendozaSignalBars />
     </div>
   );
 }
 
-function Group70() {
+function PatriciaMendozaTile() {
   return (
     <div className="absolute contents left-[calc(41.67%+26px)] top-[4577px]">
-      <MaskGroup6 />
-      <Group72 />
+      <PatriciaMendozaPhoto />
+      <PatriciaMendozaNamePlate />
     </div>
   );
 }
 
-function Surface() {
+function CursorIcon() {
   return (
     <div className="absolute inset-[39.7%_66.77%_59.9%_31.25%]" data-name="surface1">
       <svg className="absolute block inset-0 size-full" fill="none" height="46.8696" preserveAspectRatio="none" viewBox="0 0 37.9587 46.8696" width="37.9587">
@@ -315,15 +317,15 @@ function Surface() {
   );
 }
 
-function Group75() {
+function CursorIconLayer() {
   return (
     <div className="absolute contents inset-[39.7%_66.77%_59.9%_31.25%]">
-      <Surface />
+      <CursorIcon />
     </div>
   );
 }
 
-function Group74() {
+function CursorBadge() {
   return (
     <div className="absolute contents left-[calc(25%+90px)] top-[4540px]">
       <div className="absolute left-[calc(25%+90px)] size-[93px] top-[4540px]">
@@ -366,28 +368,28 @@ function Group74() {
           </svg>
         </div>
       </div>
-      <Group75 />
+      <CursorIconLayer />
     </div>
   );
 }
 
-function Group71() {
+function ClassroomWindow() {
   return (
     <div className="absolute contents left-[170px] top-[4287px]">
-      <Group67 />
-      <Group55 />
-      <Group56 />
-      <Group57 />
-      <Group64 />
-      <Group63 />
-      <Group66 />
-      <Group70 />
-      <Group74 />
+      <ClassroomWindowChrome />
+      <PresentButton />
+      <CallButton />
+      <InstructorTile />
+      <AdamLevinTile />
+      <TamaraClarkeTile />
+      <HumbertHollandTile />
+      <PatriciaMendozaTile />
+      <CursorBadge />
     </div>
   );
 }
 
-function Group76() {
+function GridViewBulletIcon() {
   return (
     <div className="absolute contents left-[calc(58.33%+86px)] top-[4534px]">
       <div className="absolute bg-[#2f327d] left-[calc(58.33%+86px)] rounded-[2px] size-[11.818px] top-[4534px]" />
@@ -398,7 +400,7 @@ function Group76() {
   );
 }
 
-function Group77() {
+function PodiumBulletIcon() {
   return (
     <div className="absolute contents left-[calc(58.33%+85px)] top-[4658px]">
       <div className="absolute bg-[#2f327d] left-[calc(58.33%+93px)] rounded-[2px] size-[20px] top-[4664px]" />
@@ -407,7 +409,7 @@ function Group77() {
   );
 }
 
-function Users() {
+function AllStudentsBulletIcon() {
   return (
     <div className="absolute h-[26px] left-[calc(58.33%+84px)] top-[4772px] w-[30px]" data-name="users 2">
       <svg className="absolute block inset-0 size-full" fill="none" height="26" preserveAspectRatio="none" viewBox="0 0 30 26" width="30">
@@ -419,20 +421,10 @@ function Users() {
   );
 }
 
-/**
- * Dedicated podium and grid-free class view.
- *
- * Absolutely positioned against the 1920px landing-page canvas.
- */
-export default function UserInterfaceFeature() {
+/** Coloured discs scattered around the class-view mockup. */
+function Decorations() {
   return (
-    <div className="absolute contents left-[170px] top-[4211px]">
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(66.67%+11px)] not-italic text-[#696984] text-[22px] top-[4747px] tracking-[0.44px] w-[459px]">Teachers can easily see all students and class data at one time.</p>
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[0] left-[calc(58.33%+72px)] not-italic text-[#2f327d] text-[0px] top-[4328px] w-[542px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-semibold leading-[1.6] text-[40px]">{`A `}</span>
-        <span className="font-poppins font-semibold leading-[1.6] text-[#f48c06] text-[40px]">user interface</span>
-        <span className="font-poppins font-semibold leading-[1.6] text-[40px]">{` designed for the classroom`}</span>
-      </p>
+    <>
       <div className="absolute left-[calc(33.33%+137px)] size-[264px] top-[4597px]">
         <svg className="absolute block inset-0 size-full" fill="none" height="264" preserveAspectRatio="none" viewBox="0 0 264 264" width="264">
           <circle cx="132" cy="132" fill="#5B61EB" id="Ellipse 19" r="132" />
@@ -453,72 +445,103 @@ export default function UserInterfaceFeature() {
           <circle cx="70" cy="70" fill="#33EFA0" id="Ellipse 22" r="70" />
         </svg>
       </div>
-      <Group71 />
-      <div className="absolute left-[calc(58.33%+69px)] size-[60px] top-[4517px]">
-        <div className="absolute inset-[-48.33%_-73.33%_-98.33%_-73.33%]">
-          <svg className="block size-full" fill="none" height="148" preserveAspectRatio="none" viewBox="0 0 148 148" width="148">
-            <g filter="url(#filter0_d_0_227)" id="Ellipse 24">
-              <circle cx="74" cy="59" fill="#FBFBFB" r="30" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="148" id="filter0_d_0_227" width="148" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="15" />
-                <feGaussianBlur stdDeviation="22" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.0588235 0 0 0 0 0.109804 0 0 0 0.12 0" />
-                <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_227" />
-                <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_227" mode="normal" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
+    </>
+  );
+}
+
+/** The soft white disc each bullet icon sits on, at a given canvas row. */
+function BulletDisc({ top }: { top: number }) {
+  return (
+    <div
+      className="absolute left-[calc(58.33%+69px)] size-[60px]"
+      style={{ top }}
+    >
+      <div className="absolute inset-[-48.33%_-73.33%_-98.33%_-73.33%]">
+        <svg className="block size-full" fill="none" height="148" preserveAspectRatio="none" viewBox="0 0 148 148" width="148">
+          <g filter="url(#filter0_d_0_227)" id="Ellipse 24">
+            <circle cx="74" cy="59" fill="#FBFBFB" r="30" />
+          </g>
+          <defs>
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="148" id="filter0_d_0_227" width="148" x="0" y="0">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+              <feOffset dy="15" />
+              <feGaussianBlur stdDeviation="22" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.0588235 0 0 0 0 0.109804 0 0 0 0.12 0" />
+              <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_227" />
+              <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_227" mode="normal" result="shape" />
+            </filter>
+          </defs>
+        </svg>
       </div>
-      <div className="absolute left-[calc(58.33%+69px)] size-[60px] top-[4641px]">
-        <div className="absolute inset-[-48.33%_-73.33%_-98.33%_-73.33%]">
-          <svg className="block size-full" fill="none" height="148" preserveAspectRatio="none" viewBox="0 0 148 148" width="148">
-            <g filter="url(#filter0_d_0_227)" id="Ellipse 24">
-              <circle cx="74" cy="59" fill="#FBFBFB" r="30" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="148" id="filter0_d_0_227" width="148" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="15" />
-                <feGaussianBlur stdDeviation="22" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.0588235 0 0 0 0 0.109804 0 0 0 0.12 0" />
-                <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_227" />
-                <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_227" mode="normal" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute left-[calc(58.33%+69px)] size-[60px] top-[4755px]">
-        <div className="absolute inset-[-48.33%_-73.33%_-98.33%_-73.33%]">
-          <svg className="block size-full" fill="none" height="148" preserveAspectRatio="none" viewBox="0 0 148 148" width="148">
-            <g filter="url(#filter0_d_0_227)" id="Ellipse 24">
-              <circle cx="74" cy="59" fill="#FBFBFB" r="30" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="148" id="filter0_d_0_227" width="148" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="15" />
-                <feGaussianBlur stdDeviation="22" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.0588235 0 0 0 0 0.109804 0 0 0 0.12 0" />
-                <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_227" />
-                <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_227" mode="normal" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(66.67%+11px)] not-italic text-[#696984] text-[22px] top-[4507px] tracking-[0.44px] w-[443px]">{`Teachers don’t get lost in the grid view and have a dedicated Podium space. `}</p>
-      <Group76 />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(66.67%+11px)] not-italic text-[#696984] text-[22px] top-[4627px] tracking-[0.44px] w-[443px]">{`TA’s and presenters can be moved to the front of the class. `}</p>
-      <Group77 />
-      <Users />
     </div>
+  );
+}
+
+/**
+ * Each bullet's icon lives at a fixed spot on the original canvas, so it is
+ * lifted out with a 100x100 crop and rendered at a fixed size in the list.
+ */
+const BULLETS = [
+  {
+    copy: "Teachers don’t get lost in the grid view and have a dedicated Podium space.",
+    cropY: 4497,
+    discTop: 4517,
+    icon: <GridViewBulletIcon />,
+  },
+  {
+    copy: "TA’s and presenters can be moved to the front of the class.",
+    cropY: 4621,
+    discTop: 4641,
+    icon: <PodiumBulletIcon />,
+  },
+  {
+    copy: "Teachers can easily see all students and class data at one time.",
+    cropY: 4735,
+    discTop: 4755,
+    icon: <AllStudentsBulletIcon />,
+  },
+];
+
+/**
+ * Dedicated podium and grid-free class view.
+ */
+export default function UserInterfaceFeature() {
+  return (
+    <FeatureRow
+      art={
+        <FigmaArt className="w-full" height={711} width={986} x={150} y={4191}>
+          <Decorations />
+          <ClassroomWindow />
+        </FigmaArt>
+      }
+      artFirst
+    >
+      <h3 className="max-w-[542px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+        A <span className="text-brand-orange">user interface</span> designed for
+        the classroom
+      </h3>
+
+      <ul className="mt-8 flex flex-col gap-6 lg:mt-12 lg:gap-10">
+        {BULLETS.map((bullet) => (
+          <li className="flex items-center gap-4 lg:gap-6" key={bullet.copy}>
+            <FigmaArt
+              className="w-[56px] shrink-0 lg:w-[72px]"
+              height={100}
+              width={100}
+              x={1169}
+              y={bullet.cropY}
+            >
+              <BulletDisc top={bullet.discTop} />
+              {bullet.icon}
+            </FigmaArt>
+
+            <p className="max-w-[459px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted">
+              {bullet.copy}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </FeatureRow>
   );
 }

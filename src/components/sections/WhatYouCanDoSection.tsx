@@ -1,4 +1,6 @@
 import svgPaths from "@/assets/svg-paths";
+import Container from "@/components/ui/Container";
+import FigmaArt from "@/components/ui/FigmaArt";
 import imgConfidentTeacherExplainingLessonPupils1 from "@/assets/images/confident-teacher-explaining-lesson-pupils-1.png";
 
 function PlayButton() {
@@ -29,7 +31,7 @@ function PlayButton() {
   );
 }
 
-function Group17() {
+function ClassroomVideoThumbnail() {
   return (
     <div className="absolute contents left-[calc(50%+48px)] top-[3331px]">
       <div className="absolute h-[471.079px] left-[calc(50%+48px)] rounded-[20px] top-[3331px] w-[705px]" data-name="confident-teacher-explaining-lesson-pupils 1">
@@ -40,33 +42,70 @@ function Group17() {
   );
 }
 
-/**
- * Capability highlights.
- *
- * Absolutely positioned against the 1920px landing-page canvas.
- */
-export default function WhatYouCanDoSection() {
+/** Decorative shapes that flank the artwork on the original canvas. */
+function Decorations() {
   return (
-    <div className="absolute contents left-[186px] top-[3311px]" data-name="You Can Do With Skilline">
-      <div className="absolute left-[186px] size-[73px] top-[3362px]">
-        <svg className="absolute block inset-0 size-full" fill="none" height="73" preserveAspectRatio="none" viewBox="0 0 73 73" width="73">
-          <circle cx="36.5" cy="36.5" fill="#F4B767" id="Ellipse 12" r="36.5" />
-        </svg>
-      </div>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[211px] not-italic text-[#696984] text-[24px] top-[3521px] tracking-[0.48px] w-[730px]">Skilline’s school management software helps traditional and online schools manage scheduling, attendance, payments and virtual classrooms all in one secure cloud-based system.</p>
-      <p className="font-poppins font-normal [text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] absolute decoration-from-font decoration-solid leading-[1.8] left-[211px] not-italic text-[#696984] text-[22px] top-[3723px] underline whitespace-nowrap">Learn more</p>
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[0] left-[211px] not-italic text-[#2f327d] text-[36px] top-[3375px] w-[655px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-medium leading-[1.6]">{`Everything you can do in a physical classroom, `}</span>
-        <span className="font-poppins font-medium leading-[1.6] text-[#f48c06]">you can do with Skilline</span>
-      </p>
+    <>
       <div className="absolute bg-[#f3ac50] left-[calc(75%+62px)] rounded-[20px] size-[231px] top-[3592px]" />
       <div className="absolute bg-[#23bdee] left-[calc(50%+28px)] rounded-[20px] size-[138px] top-[3311px]" />
-      <Group17 />
       <div className="absolute left-[calc(41.67%+102px)] size-[30px] top-[3594px]">
         <svg className="absolute block inset-0 size-full" fill="none" height="30" preserveAspectRatio="none" viewBox="0 0 30 30" width="30">
           <circle cx="15" cy="15" fill="#F4B767" id="Ellipse 13" r="15" />
         </svg>
       </div>
-    </div>
+    </>
+  );
+}
+
+/**
+ * Capability highlights.
+ *
+ * Copy and artwork sit side by side from `lg` up; below that the artwork drops
+ * under the copy.
+ */
+export default function WhatYouCanDoSection() {
+  return (
+    <section className="py-12 lg:py-20" data-name="You Can Do With Skilline">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="relative max-w-[730px]">
+            {/* Amber disc tucked behind the first line of the heading. */}
+            <span
+              aria-hidden="true"
+              className="absolute -left-2 -top-6 -z-10 size-12 rounded-full bg-[#F4B767] lg:-left-6 lg:-top-8 lg:size-[73px]"
+            />
+
+            <h2 className="font-poppins text-fluid-3xl font-medium leading-[1.6] text-brand-navy">
+              Everything you can do in a physical classroom,{" "}
+              <span className="text-brand-orange">you can do with Skilline</span>
+            </h2>
+
+            <p className="mt-8 font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+              Skilline’s school management software helps traditional and online
+              schools manage scheduling, attendance, payments and virtual
+              classrooms all in one secure cloud-based system.
+            </p>
+
+            <a
+              className="mt-8 inline-block font-poppins text-fluid-base leading-[1.8] text-brand-muted underline decoration-solid lg:mt-12"
+              href="#top"
+            >
+              Learn more
+            </a>
+          </div>
+
+          <FigmaArt
+            className="w-full"
+            height={540}
+            width={840}
+            x={900}
+            y={3300}
+          >
+            <Decorations />
+            <ClassroomVideoThumbnail />
+          </FigmaArt>
+        </div>
+      </Container>
+    </section>
   );
 }

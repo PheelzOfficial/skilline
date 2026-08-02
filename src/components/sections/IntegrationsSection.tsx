@@ -1,65 +1,82 @@
+import Container from "@/components/ui/Container";
 import imgImage2 from "@/assets/images/image-2.png";
 import imgImage3 from "@/assets/images/image-3.png";
 import imgImage5 from "@/assets/images/image-5.png";
 import imgImage6 from "@/assets/images/image-6.png";
 
-function Group120() {
-  return (
-    <div className="absolute contents left-[calc(50%+40px)] top-[8592px]">
-      <div className="absolute border border-[#f48c06] border-solid h-[80px] left-[calc(50%+40px)] rounded-[80px] top-[8592px] w-[280px]" />
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(50%+82px)] text-[#f48c06] text-[22px] top-[8612px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        See All Integrations
-      </p>
-    </div>
-  );
-}
-
-function Group121() {
-  return (
-    <div className="absolute contents left-[calc(50%+40px)] top-[8213px]">
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[normal] left-[calc(58.33%-9px)] text-[#525596] text-[20px] top-[8213px] tracking-[4px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        INTEGRATIONS
-      </p>
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(50%+41px)] text-[#696984] text-[24px] top-[8419px] w-[687px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        Schoology has every tool your classroom needs and comes pre-integrated with more than 200+ tools, student information systems (SIS), and education platforms.
-      </p>
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[0] left-[calc(50%+41px)] text-[#2f327d] text-[36px] top-[8273px] w-[480px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="leading-[1.6]">{`200+ educational tools and platform `}</span>
-        <span className="leading-[1.6] text-[#f48c06]">integrations</span>
-      </p>
-      <Group120 />
-      <div className="absolute h-0 left-[calc(50%+41px)] top-[8228px] w-[80px]">
-        <div className="absolute inset-[-1px_0_0_0]">
-          <svg className="block size-full" fill="none" height="1" preserveAspectRatio="none" viewBox="0 0 80 1" width="80">
-            <line id="Line 4" stroke="#525596" x2="80" y1="0.5" y2="0.5" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
+/**
+ * The four partner marks, expressed as percentages of the collage box they were
+ * arranged in on the original canvas (478 x 447). Percentages let the whole
+ * arrangement scale as one piece without a transform.
+ */
+const LOGOS = [
+  { height: "43.6%", left: "0%", src: imgImage2, top: "0%", width: "47.7%" },
+  { height: "27.1%", left: "66.7%", src: imgImage5, top: "16.8%", width: "27.2%" },
+  { height: "30.2%", left: "16.5%", src: imgImage3, top: "62.4%", width: "28.9%" },
+  { height: "35.6%", left: "66.7%", src: imgImage6, top: "64.4%", width: "33.3%" },
+];
 
 /**
  * Third-party integrations strip.
  *
- * Absolutely positioned against the 1920px landing-page canvas.
+ * The logo collage keeps its scattered arrangement at every width; the copy
+ * moves beneath it once the two columns no longer fit.
  */
 export default function IntegrationsSection() {
   return (
-    <div className="absolute contents left-[calc(8.33%+71px)] top-[8213px]" data-name="Integrations">
-      <div className="absolute h-[195px] left-[calc(8.33%+71px)] top-[8225px] w-[228px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-      </div>
-      <div className="absolute h-[135px] left-[calc(8.33%+150px)] top-[8504px] w-[138px]" data-name="image 3">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-      </div>
-      <div className="absolute h-[121px] left-[calc(25%+70px)] top-[8300px] w-[130px]" data-name="image 5">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-      </div>
-      <div className="absolute left-[calc(25%+70px)] size-[159px] top-[8513px]" data-name="image 6">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-      </div>
-      <Group121 />
-    </div>
+    <section className="py-12 lg:py-20" data-name="Integrations">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div
+            aria-hidden="true"
+            className="relative mx-auto w-full max-w-[478px]"
+            style={{ aspectRatio: "478 / 447" }}
+          >
+            {LOGOS.map((logo) => (
+              <img
+                alt=""
+                className="absolute object-contain"
+                key={logo.src}
+                src={logo.src}
+                style={{
+                  height: logo.height,
+                  left: logo.left,
+                  top: logo.top,
+                  width: logo.width,
+                }}
+              />
+            ))}
+          </div>
+
+          <div>
+            <p className="font-nunito text-fluid-sm tracking-[0.2em] text-brand-slate">
+              INTEGRATIONS
+            </p>
+            <span
+              aria-hidden="true"
+              className="mt-3 block h-px w-20 bg-brand-slate"
+            />
+
+            <h2 className="mt-8 max-w-[480px] font-nunito text-fluid-3xl font-bold leading-[1.6] text-brand-navy">
+              200+ educational tools and platform{" "}
+              <span className="text-brand-orange">integrations</span>
+            </h2>
+
+            <p className="mt-8 max-w-[687px] font-nunito text-fluid-md leading-[1.8] text-brand-muted">
+              Schoology has every tool your classroom needs and comes
+              pre-integrated with more than 200+ tools, student information
+              systems (SIS), and education platforms.
+            </p>
+
+            <a
+              className="mt-10 inline-block rounded-[80px] border border-solid border-brand-orange px-10 py-4 font-nunito text-fluid-base leading-[1.8] text-brand-orange transition-colors hover:bg-brand-orange hover:text-white lg:px-14 lg:py-6"
+              href="#top"
+            >
+              See All Integrations
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }

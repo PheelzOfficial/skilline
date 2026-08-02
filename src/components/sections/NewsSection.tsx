@@ -1,143 +1,131 @@
+import Container from "@/components/ui/Container";
 import imgRectangle32 from "@/assets/images/rectangle-32.png";
 import imgRectangle33 from "@/assets/images/rectangle-33.png";
 import imgRectangle34 from "@/assets/images/rectangle-34.png";
 import imgRectangle37 from "@/assets/images/rectangle-37.png";
 
-function Group40() {
+/** Amber category chip used on every card. */
+function Tag({ children }: { children: string }) {
   return (
-    <div className="absolute contents left-[200px] top-[10041px]">
-      <div className="absolute h-[340px] left-[200px] rounded-[20px] top-[10041px] w-[640px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle32} />
-      </div>
-      <div className="absolute bg-[#171b41] h-[340px] left-[200px] opacity-10 rounded-[20px] top-[10041px] w-[640px]" />
-    </div>
+    <span className="inline-block rounded-[80px] bg-[#f4c467] px-5 py-1.5 font-poppins text-fluid-xs tracking-[0.02em] text-brand-ink">
+      {children}
+    </span>
   );
 }
 
-function Group39() {
-  return (
-    <div className="absolute contents left-[200px] top-[10421px]">
-      <div className="absolute bg-[#f4c467] h-[40px] left-[200px] rounded-[80px] top-[10421px] w-[130px]" />
-      <p className="font-poppins font-medium [word-break:break-word] absolute leading-[1.8] left-[calc(8.33%+75px)] not-italic text-[#252641] text-[20px] top-[10423px] tracking-[0.4px] whitespace-nowrap">NEWS</p>
-    </div>
-  );
-}
-
-function Group50() {
-  return (
-    <div className="absolute contents left-[200px] top-[10041px]">
-      <Group40 />
-      <p className="font-poppins font-medium [word-break:break-word] absolute leading-[1.8] left-[200px] not-italic text-[#252641] text-[26px] top-[10481px] w-[609px]">Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[200px] not-italic text-[#696984] text-[20px] top-[10595px] tracking-[0.4px] w-[609px]">Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-      <p className="font-poppins font-normal [text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] absolute decoration-from-font decoration-solid leading-[1.8] left-[200px] not-italic text-[#696984] text-[20px] top-[10695px] tracking-[0.4px] underline whitespace-nowrap">Read more</p>
-      <Group39 />
-    </div>
-  );
-}
-
-function Group44() {
-  return (
-    <div className="absolute contents left-[calc(50%+106px)] top-[10187px]">
-      <div className="absolute bg-[#f4c467] h-[34px] left-[calc(50%+106px)] rounded-[80px] top-[10187px] w-[154px]" />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[normal] left-[calc(50%+118px)] not-italic text-[#252641] text-[18px] top-[10191px] tracking-[0.36px] whitespace-nowrap">PRESS RELEASE</p>
-    </div>
-  );
-}
-
-function Group47() {
-  return (
-    <div className="absolute contents left-1/2 top-[10041px]">
-      <div className="absolute h-[200px] left-1/2 rounded-[20px] top-[10041px] w-[280px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle33} />
-      </div>
-      <div className="absolute bg-[#171b41] h-[200px] left-1/2 opacity-10 rounded-[20px] top-[10041px] w-[280px]" />
-      <p className="font-poppins font-medium [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#252641] text-[22px] top-[10041px] w-[477px]">Class Technologies Inc. Closes $30 Million Series A Financing to Meet High Demand</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#696984] text-[20px] top-[10141px] tracking-[0.4px] w-[447px]">Class Technologies Inc., the company that created Class,...</p>
-      <Group44 />
-    </div>
-  );
-}
-
-function Group42() {
-  return (
-    <div className="absolute contents left-1/2 top-[10291px]">
-      <div className="absolute h-[200px] left-1/2 rounded-[20px] top-[10291px] w-[280px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle34} />
-      </div>
-      <div className="absolute bg-[#171b41] h-[200px] left-1/2 opacity-10 rounded-[20px] top-[10291px] w-[280px]" />
-    </div>
-  );
-}
-
-function Group45() {
-  return (
-    <div className="absolute contents left-[58.33%] top-[10437px]">
-      <div className="absolute bg-[#f4c467] h-[34px] left-[58.33%] rounded-[80px] top-[10437px] w-[100px]" />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[normal] left-[calc(58.33%+26px)] not-italic text-[#252641] text-[18px] top-[10441px] tracking-[0.36px] whitespace-nowrap">NEWS</p>
-    </div>
-  );
-}
-
-function Group48() {
-  return (
-    <div className="absolute contents left-1/2 top-[10291px]">
-      <Group42 />
-      <p className="font-poppins font-medium [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#252641] text-[22px] top-[10291px] w-[477px]">Zoom’s earliest investors are betting millions on a better Zoom for schools</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#696984] text-[20px] top-[10391px] tracking-[0.4px] w-[447px]">Zoom was never created to be a consumer product. Nonetheless, the...</p>
-      <Group45 />
-    </div>
-  );
-}
-
-function Group43() {
-  return (
-    <div className="absolute contents left-1/2 top-[10541px]">
-      <div className="absolute h-[200px] left-1/2 rounded-[20px] top-[10541px] w-[280px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle37} />
-      </div>
-      <div className="absolute bg-[#171b41] h-[200px] left-1/2 opacity-10 rounded-[20px] top-[10541px] w-[280px]" />
-    </div>
-  );
-}
-
-function Group46() {
-  return (
-    <div className="absolute contents left-[58.33%] top-[10687px]">
-      <div className="absolute bg-[#f4c467] h-[34px] left-[58.33%] rounded-[80px] top-[10687px] w-[100px]" />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[normal] left-[calc(58.33%+26px)] not-italic text-[#252641] text-[18px] top-[10691px] tracking-[0.36px] whitespace-nowrap">NEWS</p>
-    </div>
-  );
-}
-
-function Group49() {
-  return (
-    <div className="absolute contents left-1/2 top-[10541px]">
-      <Group43 />
-      <p className="font-poppins font-medium [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#252641] text-[22px] top-[10541px] w-[477px]">Former Blackboard CEO Raises $16M to Bring LMS Features to Zoom Classrooms</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[66.67%] not-italic text-[#696984] text-[20px] top-[10641px] tracking-[0.4px] w-[447px]">This year, investors have reaped big financial returns from betting on Zoom...</p>
-      <Group46 />
-    </div>
-  );
-}
+const SIDE_STORIES = [
+  {
+    excerpt: "Class Technologies Inc., the company that created Class,...",
+    image: imgRectangle33,
+    tag: "PRESS RELEASE",
+    title:
+      "Class Technologies Inc. Closes $30 Million Series A Financing to Meet High Demand",
+  },
+  {
+    excerpt: "Zoom was never created to be a consumer product. Nonetheless, the...",
+    image: imgRectangle34,
+    tag: "NEWS",
+    title: "Zoom’s earliest investors are betting millions on a better Zoom for schools",
+  },
+  {
+    excerpt: "This year, investors have reaped big financial returns from betting on Zoom...",
+    image: imgRectangle37,
+    tag: "NEWS",
+    title:
+      "Former Blackboard CEO Raises $16M to Bring LMS Features to Zoom Classrooms",
+  },
+];
 
 /**
  * Latest news article cards.
  *
- * Absolutely positioned against the 1920px landing-page canvas.
+ * The lead story and the three follow-ups share a two-column grid on desktop.
+ * Below `md` each side story stacks its thumbnail above its copy.
  */
 export default function NewsSection() {
   return (
-    <div className="absolute contents left-[200px] top-[9813px]" data-name="News">
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[1.8] left-[calc(33.33%+81px)] text-[#2f327d] text-[36px] top-[9813px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        Lastest News and Resources
-      </p>
-      <p className="font-nunito font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(25%+480px)] text-[#696984] text-[24px] text-center top-[9898px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        See the developments that have occurred to Skillines in the world
-      </p>
-      <Group50 />
-      <Group47 />
-      <Group48 />
-      <Group49 />
-    </div>
+    <section className="py-12 lg:py-20" data-name="News">
+      <Container>
+        <h2 className="text-center font-nunito text-fluid-3xl font-bold leading-[1.8] text-brand-navy">
+          Lastest News and Resources
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-[820px] text-center font-nunito text-fluid-md leading-[1.8] text-brand-muted">
+          See the developments that have occurred to Skillines in the world
+        </p>
+
+        <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-2 lg:gap-14">
+          <article>
+            <div className="relative aspect-[64/34] overflow-hidden rounded-[20px]">
+              <img
+                alt=""
+                className="absolute inset-0 size-full object-cover"
+                src={imgRectangle32}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-[#171b41] opacity-10"
+              />
+            </div>
+
+            <div className="mt-8">
+              <Tag>NEWS</Tag>
+
+              <h3 className="mt-6 max-w-[609px] font-poppins text-fluid-lg font-medium leading-[1.8] text-brand-ink">
+                Class adds $30 million to its balance sheet for a Zoom-friendly
+                edtech solution
+              </h3>
+
+              <p className="mt-4 max-w-[609px] font-poppins text-fluid-sm leading-[1.8] tracking-[0.02em] text-brand-muted">
+                Class, launched less than a year ago by Blackboard co-founder
+                Michael Chasen, integrates exclusively...
+              </p>
+
+              <a
+                className="mt-6 inline-block font-poppins text-fluid-sm leading-[1.8] tracking-[0.02em] text-brand-muted underline decoration-solid"
+                href="#top"
+              >
+                Read more
+              </a>
+            </div>
+          </article>
+
+          <div className="flex flex-col gap-10">
+            {SIDE_STORIES.map((story) => (
+              <article
+                className="grid gap-5 sm:grid-cols-[280px_minmax(0,1fr)] sm:items-start sm:gap-8"
+                key={story.title}
+              >
+                <div className="relative aspect-[7/5] overflow-hidden rounded-[20px]">
+                  <img
+                    alt=""
+                    className="absolute inset-0 size-full object-cover"
+                    src={story.image}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-[#171b41] opacity-10"
+                  />
+                </div>
+
+                <div>
+                  <h3 className="font-poppins text-fluid-base font-medium leading-[1.8] text-brand-ink">
+                    {story.title}
+                  </h3>
+
+                  <p className="mt-3 font-poppins text-fluid-sm leading-[1.8] tracking-[0.02em] text-brand-muted">
+                    {story.excerpt}
+                  </p>
+
+                  <div className="mt-5">
+                    <Tag>{story.tag}</Tag>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }

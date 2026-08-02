@@ -1,7 +1,9 @@
 import svgPaths from "@/assets/svg-paths";
+import FeatureRow from "@/components/sections/features/FeatureRow";
+import FigmaArt from "@/components/ui/FigmaArt";
 import imgImage14 from "@/assets/images/image-14.png";
 
-function Group78() {
+function DottedBackdrop() {
   return (
     <div className="absolute flex h-[449.917px] items-center justify-center left-[calc(50%+117px)] top-[5125px] w-[600.205px]">
       <div className="flex-none rotate-[-8.82deg]">
@@ -86,7 +88,7 @@ function Group78() {
   );
 }
 
-function Group80() {
+function TeachingToolsGlyph() {
   return (
     <div className="absolute contents h-[40.843px] left-[calc(58.33%+21px)] top-[5166.14px] w-[43.478px]">
       <div className="absolute flex h-[12.006px] items-center justify-center left-[calc(58.33%+21px)] top-[5170.35px] w-[18.594px]">
@@ -113,7 +115,7 @@ function Group80() {
   );
 }
 
-function Group79() {
+function TeachingToolsBadge() {
   return (
     <div className="absolute contents left-[calc(58.33%-8px)] top-[5135.43px]">
       <div className="absolute flex items-center justify-center left-[calc(58.33%-8px)] size-[102px] top-[5135.43px]">
@@ -126,12 +128,12 @@ function Group79() {
           <div className="bg-white relative rounded-[20px] shadow-[0px_16px_44px_0px_rgba(13,15,28,0.1)] size-[62.364px]" />
         </div>
       </div>
-      <Group80 />
+      <TeachingToolsGlyph />
     </div>
   );
 }
 
-function UsersClass() {
+function UsersClassIcon() {
   return (
     <div className="absolute flex h-[35.448px] items-center justify-center left-[calc(83.33%+9.64px)] top-[5234.56px] w-[41.273px]">
       <div className="flex-none rotate-[9.92deg]">
@@ -152,7 +154,7 @@ function UsersClass() {
   );
 }
 
-function Group81() {
+function ClassRosterBadge() {
   return (
     <div className="absolute contents left-[calc(83.33%-18.3px)] size-[98.493px] top-[5204px]">
       <div className="absolute flex items-center justify-center left-[calc(83.33%-18.3px)] size-[98.493px] top-[5204px]">
@@ -165,15 +167,15 @@ function Group81() {
           <div className="bg-white relative rounded-[20px] shadow-[0px_16px_44px_0px_rgba(13,15,28,0.1)] size-[61.816px]" />
         </div>
       </div>
-      <UsersClass />
+      <UsersClassIcon />
     </div>
   );
 }
 
-function Group122() {
+function TeachingToolsIllustration() {
   return (
     <div className="absolute contents left-[calc(50%+83px)] top-[5021px]">
-      <Group78 />
+      <DottedBackdrop />
       <div className="absolute left-[calc(66.67%-15px)] size-[236px] top-[5100px]">
         <svg className="absolute block inset-0 size-full" fill="none" height="236" preserveAspectRatio="none" viewBox="0 0 236 236" width="236">
           <circle cx="118" cy="118" fill="#FF6A6A" id="Ellipse 97" r="118" />
@@ -199,26 +201,40 @@ function Group122() {
           <img alt="" className="absolute h-[104.89%] left-[-21.83%] max-w-none top-[-4.83%] w-[125%]" src={imgImage14} />
         </div>
       </div>
-      <Group79 />
-      <Group81 />
+      <TeachingToolsBadge />
+      <ClassRosterBadge />
     </div>
   );
 }
 
 /**
  * "Tools For Teachers And Learners" — in-class assignment handout.
- *
- * Absolutely positioned against the 1920px landing-page canvas.
  */
 export default function TeachingToolsFeature() {
   return (
-    <div className="absolute contents left-[calc(8.33%+79px)] top-[5021px]">
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(8.33%+79px)] not-italic text-[#696984] text-[22px] top-[5358px] tracking-[0.44px] w-[568px]">Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can handout assignments in real-time for students to complete and submit.</p>
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[0] left-[calc(8.33%+79px)] not-italic text-[#2f327d] text-[40px] top-[5210px] w-[393px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-semibold leading-[1.6] text-[#f48c06]">Tools</span>
-        <span className="font-poppins font-semibold leading-[1.6]">{` For Teachers And Learners`}</span>
+    <FeatureRow
+      art={
+        <FigmaArt
+          className="mx-auto w-full max-w-[520px] lg:max-w-none"
+          height={651}
+          width={677}
+          x={1023}
+          y={5001}
+        >
+          <TeachingToolsIllustration />
+        </FigmaArt>
+      }
+    >
+      <h3 className="max-w-[393px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+        <span className="text-brand-orange">Tools</span> For Teachers And
+        Learners
+      </h3>
+
+      <p className="mt-8 max-w-[568px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+        Class has a dynamic set of teaching tools built to be deployed and used
+        during class. Teachers can handout assignments in real-time for students
+        to complete and submit.
       </p>
-      <Group122 />
-    </div>
+    </FeatureRow>
   );
 }

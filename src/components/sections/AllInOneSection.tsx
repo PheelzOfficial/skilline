@@ -1,6 +1,8 @@
 import svgPaths from "@/assets/svg-paths";
+import Container from "@/components/ui/Container";
+import FigmaArt from "@/components/ui/FigmaArt";
 
-function Group4() {
+function SchedulingCalendarIconPart1Shape() {
   return (
     <div className="absolute inset-[0_71.43%_89.29%_21.43%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="5.14285" preserveAspectRatio="none" viewBox="0 0 3.42854 5.14285" width="3.42854">
@@ -12,15 +14,15 @@ function Group4() {
   );
 }
 
-function Group3() {
+function SchedulingCalendarIconPart1() {
   return (
     <div className="absolute contents inset-[0_71.43%_89.29%_21.43%]" data-name="Group">
-      <Group4 />
+      <SchedulingCalendarIconPart1Shape />
     </div>
   );
 }
 
-function Group6() {
+function SchedulingCalendarIconPart2Shape() {
   return (
     <div className="absolute inset-[0_21.43%_89.29%_71.43%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="5.14285" preserveAspectRatio="none" viewBox="0 0 3.42854 5.14285" width="3.42854">
@@ -32,15 +34,15 @@ function Group6() {
   );
 }
 
-function Group5() {
+function SchedulingCalendarIconPart2() {
   return (
     <div className="absolute contents inset-[0_21.43%_89.29%_71.43%]" data-name="Group">
-      <Group6 />
+      <SchedulingCalendarIconPart2Shape />
     </div>
   );
 }
 
-function Group8() {
+function SchedulingCalendarIconPart3Shape() {
   return (
     <div className="absolute inset-[10.71%_0_0_0]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="42.8571" preserveAspectRatio="none" viewBox="0 0 48 42.8571" width="48">
@@ -52,15 +54,15 @@ function Group8() {
   );
 }
 
-function Group7() {
+function SchedulingCalendarIconPart3() {
   return (
     <div className="absolute contents inset-[10.71%_0_0_0]" data-name="Group">
-      <Group8 />
+      <SchedulingCalendarIconPart3Shape />
     </div>
   );
 }
 
-function Group10() {
+function SchedulingCalendarIconPart4Shape() {
   return (
     <div className="absolute bottom-[42.86%] left-[17.86%] right-[67.86%] top-1/2" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42863" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42863" width="6.85717">
@@ -72,15 +74,15 @@ function Group10() {
   );
 }
 
-function Group9() {
+function SchedulingCalendarIconPart4() {
   return (
     <div className="absolute bottom-[42.86%] contents left-[17.86%] right-[67.86%] top-1/2" data-name="Group">
-      <Group10 />
+      <SchedulingCalendarIconPart4Shape />
     </div>
   );
 }
 
-function Group12() {
+function SchedulingCalendarIconPart5Shape() {
   return (
     <div className="absolute bottom-[42.86%] left-[42.86%] right-[42.86%] top-1/2" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42863" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42863" width="6.85717">
@@ -92,15 +94,15 @@ function Group12() {
   );
 }
 
-function Group11() {
+function SchedulingCalendarIconPart5() {
   return (
     <div className="absolute bottom-[42.86%] contents left-[42.86%] right-[42.86%] top-1/2" data-name="Group">
-      <Group12 />
+      <SchedulingCalendarIconPart5Shape />
     </div>
   );
 }
 
-function Group14() {
+function SchedulingCalendarIconPart6Shape() {
   return (
     <div className="absolute bottom-[42.86%] left-[67.86%] right-[17.86%] top-1/2" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42863" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42863" width="6.85717">
@@ -112,15 +114,15 @@ function Group14() {
   );
 }
 
-function Group13() {
+function SchedulingCalendarIconPart6() {
   return (
     <div className="absolute bottom-[42.86%] contents left-[67.86%] right-[17.86%] top-1/2" data-name="Group">
-      <Group14 />
+      <SchedulingCalendarIconPart6Shape />
     </div>
   );
 }
 
-function Group16() {
+function SchedulingCalendarIconPart7Shape() {
   return (
     <div className="absolute inset-[64.29%_67.86%_28.57%_17.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42864" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42864" width="6.85717">
@@ -132,15 +134,15 @@ function Group16() {
   );
 }
 
-function Group15() {
+function SchedulingCalendarIconPart7() {
   return (
     <div className="absolute contents inset-[64.29%_67.86%_28.57%_17.86%]" data-name="Group">
-      <Group16 />
+      <SchedulingCalendarIconPart7Shape />
     </div>
   );
 }
 
-function Group19() {
+function SchedulingCalendarIconPart8Shape() {
   return (
     <div className="absolute inset-[64.29%_42.86%_28.57%_42.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42864" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42864" width="6.85717">
@@ -152,15 +154,15 @@ function Group19() {
   );
 }
 
-function Group18() {
+function SchedulingCalendarIconPart8() {
   return (
     <div className="absolute contents inset-[64.29%_42.86%_28.57%_42.86%]" data-name="Group">
-      <Group19 />
+      <SchedulingCalendarIconPart8Shape />
     </div>
   );
 }
 
-function Group25() {
+function SchedulingCalendarIconPart9Shape() {
   return (
     <div className="absolute inset-[64.29%_17.86%_28.57%_67.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42864" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42864" width="6.85717">
@@ -172,15 +174,15 @@ function Group25() {
   );
 }
 
-function Group24() {
+function SchedulingCalendarIconPart9() {
   return (
     <div className="absolute contents inset-[64.29%_17.86%_28.57%_67.86%]" data-name="Group">
-      <Group25 />
+      <SchedulingCalendarIconPart9Shape />
     </div>
   );
 }
 
-function Group27() {
+function SchedulingCalendarIconPart10Shape() {
   return (
     <div className="absolute inset-[78.57%_67.86%_14.29%_17.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42854" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42854" width="6.85717">
@@ -192,15 +194,15 @@ function Group27() {
   );
 }
 
-function Group26() {
+function SchedulingCalendarIconPart10() {
   return (
     <div className="absolute contents inset-[78.57%_67.86%_14.29%_17.86%]" data-name="Group">
-      <Group27 />
+      <SchedulingCalendarIconPart10Shape />
     </div>
   );
 }
 
-function Group30() {
+function SchedulingCalendarIconPart11Shape() {
   return (
     <div className="absolute inset-[78.57%_42.86%_14.29%_42.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42863" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42863" width="6.85717">
@@ -212,15 +214,15 @@ function Group30() {
   );
 }
 
-function Group28() {
+function SchedulingCalendarIconPart11() {
   return (
     <div className="absolute contents inset-[78.57%_42.86%_14.29%_42.86%]" data-name="Group">
-      <Group30 />
+      <SchedulingCalendarIconPart11Shape />
     </div>
   );
 }
 
-function Group33() {
+function SchedulingCalendarIconPart12Shape() {
   return (
     <div className="absolute inset-[78.57%_17.86%_14.29%_67.86%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="3.42863" preserveAspectRatio="none" viewBox="0 0 6.85717 3.42863" width="6.85717">
@@ -232,34 +234,34 @@ function Group33() {
   );
 }
 
-function Group31() {
+function SchedulingCalendarIconPart12() {
   return (
     <div className="absolute contents inset-[78.57%_17.86%_14.29%_67.86%]" data-name="Group">
-      <Group33 />
+      <SchedulingCalendarIconPart12Shape />
     </div>
   );
 }
 
-function Calendar1() {
+function SchedulingCalendarIcon() {
   return (
     <div className="absolute left-[calc(41.67%+136px)] overflow-clip size-[48px] top-[1824px]" data-name="calendar 2">
-      <Group3 />
-      <Group5 />
-      <Group7 />
-      <Group9 />
-      <Group11 />
-      <Group13 />
-      <Group15 />
-      <Group18 />
-      <Group24 />
-      <Group26 />
-      <Group28 />
-      <Group31 />
+      <SchedulingCalendarIconPart1 />
+      <SchedulingCalendarIconPart2 />
+      <SchedulingCalendarIconPart3 />
+      <SchedulingCalendarIconPart4 />
+      <SchedulingCalendarIconPart5 />
+      <SchedulingCalendarIconPart6 />
+      <SchedulingCalendarIconPart7 />
+      <SchedulingCalendarIconPart8 />
+      <SchedulingCalendarIconPart9 />
+      <SchedulingCalendarIconPart10 />
+      <SchedulingCalendarIconPart11 />
+      <SchedulingCalendarIconPart12 />
     </div>
   );
 }
 
-function Group133() {
+function SchedulingIconBadge() {
   return (
     <div className="absolute contents left-[calc(41.67%+110px)] top-[1798px]">
       <div className="absolute left-[calc(41.67%+110px)] size-[100px] top-[1798px]">
@@ -282,12 +284,12 @@ function Group133() {
           </svg>
         </div>
       </div>
-      <Calendar1 />
+      <SchedulingCalendarIcon />
     </div>
   );
 }
 
-function Group134() {
+function CustomerTrackingIconBadge() {
   return (
     <div className="absolute left-[calc(75%-20px)] size-[100px] top-[1798px]">
       <div className="absolute inset-[-30%_-40%_-50%_-40%]">
@@ -317,7 +319,7 @@ function Group134() {
   );
 }
 
-function Group135() {
+function BillingIconBadge() {
   return (
     <div className="absolute left-[calc(16.67%+80px)] size-[100px] top-[1798px]">
       <div className="absolute inset-[-30%_-40%_-50%_-40%]">
@@ -351,30 +353,81 @@ function Group135() {
 }
 
 /**
+ * Crop rectangles for the three icon medallions, in canvas coordinates. Each
+ * box is 180px so it contains the 100px circle plus its drop shadow.
+ */
+const CARDS = [
+  {
+    art: <BillingIconBadge />,
+    body: "Simple and secure control of your organization’s financial and legal transactions. Send customized invoices and contracts",
+    crop: { x: 360, y: 1768 },
+    title: "Online Billing, Invoicing, & Contracts",
+  },
+  {
+    art: <SchedulingIconBadge />,
+    body: "Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance",
+    crop: { x: 870, y: 1774 },
+    title: "Easy Scheduling & Attendance Tracking",
+  },
+  {
+    art: <CustomerTrackingIconBadge />,
+    body: "Automate and track emails to individuals or groups. Skilline’s built-in system helps organize your organization",
+    crop: { x: 1380, y: 1768 },
+    title: "Customer Tracking",
+  },
+];
+
+/**
  * "All-In-One Cloud Software" pitch and stat cards.
  *
- * Absolutely positioned against the 1920px landing-page canvas.
+ * Three cards across on desktop, collapsing to one column on narrow screens.
  */
 export default function AllInOneSection() {
   return (
-    <div className="absolute contents left-[calc(8.33%+65px)] top-[1524px]" data-name="All-in-one">
-      <p className="font-poppins font-semibold [word-break:break-word] absolute leading-[0] left-[calc(33.33%+73px)] not-italic text-[#2f327d] text-[36px] top-[1524px] whitespace-nowrap">
-        <span className="font-poppins font-bold leading-[1.8]">{`All-In-One `}</span>
-        <span className="font-poppins font-bold leading-[1.8] text-[#f48c06]">Cloud Software.</span>
-      </p>
-      <p className="font-poppins font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(25%+483.5px)] not-italic text-[#696984] text-[24px] text-center top-[1609px] w-[837px]">{`Skilline is one powerful online software suite that combines all the tools needed to run a successful school or office. `}</p>
-      <div className="absolute bg-white h-[430px] left-[calc(8.33%+65px)] rounded-[20px] shadow-[0px_10px_60px_0px_rgba(38,45,118,0.08)] top-[1855px] w-[450px]" />
-      <div className="absolute bg-white h-[430px] left-[calc(33.33%+95px)] rounded-[20px] shadow-[0px_10px_60px_0px_rgba(38,45,118,0.08)] top-[1855px] w-[450px]" />
-      <div className="absolute bg-white h-[430px] left-[calc(66.67%-35px)] rounded-[20px] shadow-[0px_10px_60px_0px_rgba(38,45,118,0.08)] top-[1855px] w-[450px]" />
-      <p className="font-poppins font-medium -translate-x-1/2 [word-break:break-word] absolute leading-[normal] left-[calc(8.33%+290.5px)] not-italic text-[#2f327d] text-[30px] text-center top-[1977px] w-[343px]">{`Online Billing, Invoicing, & Contracts `}</p>
-      <p className="font-poppins font-medium -translate-x-1/2 [word-break:break-word] absolute leading-[normal] left-[calc(33.33%+319.5px)] not-italic text-[#2f327d] text-[30px] text-center top-[1977px] w-[345px]">{`Easy Scheduling & Attendance Tracking`}</p>
-      <p className="font-poppins font-medium -translate-x-1/2 [word-break:break-word] absolute leading-[normal] left-[calc(66.67%+190px)] not-italic text-[#2f327d] text-[30px] text-center top-[2004px] whitespace-nowrap">Customer Tracking</p>
-      <p className="font-poppins font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(8.33%+290.5px)] not-italic text-[#696984] text-[20px] text-center top-[2091px] w-[341px]">Simple and secure control of your organization’s financial and legal transactions. Send customized invoices and contracts</p>
-      <p className="font-poppins font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(33.33%+320.5px)] not-italic text-[#696984] text-[20px] text-center top-[2091px] w-[377px]">Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance</p>
-      <p className="font-poppins font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(66.67%+189.5px)] not-italic text-[#696984] text-[20px] text-center top-[2091px] w-[319px]">{`Automate and track emails to individuals or groups. Skilline’s built-in system helps organize your organization `}</p>
-      <Group133 />
-      <Group134 />
-      <Group135 />
-    </div>
+    <section className="py-12 lg:py-20" data-name="All-in-one">
+      <Container>
+        <h2 className="text-center font-poppins text-fluid-3xl font-bold leading-[1.4] text-brand-navy">
+          All-In-One <span className="text-brand-orange">Cloud Software.</span>
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-[837px] text-center font-poppins text-fluid-md leading-[1.8] text-brand-muted">
+          Skilline is one powerful online software suite that combines all the
+          tools needed to run a successful school or office.
+        </p>
+
+        <ul className="mt-20 grid gap-x-8 gap-y-24 sm:grid-cols-2 lg:mt-28 lg:grid-cols-3 lg:gap-x-10">
+          {CARDS.map((card) => (
+            <li
+              className="relative flex flex-col items-center rounded-[20px] bg-white px-6 pb-10 pt-20 text-center shadow-[0px_10px_60px_0px_rgba(38,45,118,0.08)] sm:px-8 lg:pb-14 lg:pt-24"
+              key={card.title}
+            >
+              {/*
+                * Positioning lives on this wrapper: FigmaArt sets `relative`
+                * on its own box, which would win over an `absolute` passed
+                * through className.
+                */}
+              <span className="absolute -top-14 left-1/2 block w-[128px] -translate-x-1/2 lg:-top-20 lg:w-[180px]">
+                <FigmaArt
+                  height={180}
+                  width={180}
+                  x={card.crop.x}
+                  y={card.crop.y}
+                >
+                  {card.art}
+                </FigmaArt>
+              </span>
+
+              <h3 className="max-w-[345px] font-poppins text-fluid-xl font-medium text-brand-navy">
+                {card.title}
+              </h3>
+
+              <p className="mt-6 max-w-[377px] font-poppins text-fluid-sm leading-[1.8] text-brand-muted lg:mt-10">
+                {card.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </section>
   );
 }

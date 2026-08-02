@@ -1,10 +1,12 @@
 import svgPaths from "@/assets/svg-paths";
+import Container from "@/components/ui/Container";
+import FigmaArt from "@/components/ui/FigmaArt";
 import {
   imgSmilingWomanWithAfroPosingPinkSweater1,
 } from "@/assets/image-placeholders";
 import imgSmilingWomanWithAfroPosingPinkSweater2 from "@/assets/images/smiling-woman-with-afro-posing-pink-sweater-2.png";
 
-function MaskGroup() {
+function ReviewerPhoto() {
   return (
     <div className="absolute contents left-[calc(50%+10px)] top-[8842px]" data-name="Mask Group">
       <div className="absolute h-[702px] left-[calc(33.33%+94px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[236px_0px] mask-size-[560px_700px] top-[8842px] w-[1052px]" style={{ maskImage: `url("${imgSmilingWomanWithAfroPosingPinkSweater1}")` }} data-name="smiling-woman-with-afro-posing-pink-sweater 1">
@@ -14,10 +16,11 @@ function MaskGroup() {
   );
 }
 
-function Group29() {
+/** Five-star rating mark from the export. */
+function RatingStars() {
   return (
-    <div className="absolute h-[23.975px] left-[calc(83.33%-60px)] top-[9566px] w-[137px]">
-      <svg className="absolute block inset-0 size-full" fill="none" height="23.975" preserveAspectRatio="none" viewBox="0 0 137 23.975" width="137">
+    <span className="block h-[24px] w-[137px] max-w-full">
+      <svg className="block size-full" fill="none" height="23.975" preserveAspectRatio="xMidYMid meet" viewBox="0 0 137 23.975" width="137">
         <g id="Group 29">
           <path d={svgPaths.pae59200} fill="#FBA333" id="Star 1" />
           <path d={svgPaths.p284b4200} fill="#FBA333" id="Star 2" />
@@ -26,24 +29,26 @@ function Group29() {
           <path d={svgPaths.p6f34400} fill="#FBA333" id="Star 5" />
         </g>
       </svg>
-    </div>
+    </span>
   );
 }
 
-function Group32() {
+/** Circular arrow that terminates the "Write your assessment" pill. */
+function ArrowBadge() {
   return (
-    <div className="absolute left-[calc(25%+43px)] size-[80px] top-[9337px]">
-      <svg className="absolute block inset-0 size-full" fill="none" height="80" preserveAspectRatio="none" viewBox="0 0 80 80" width="80">
+    <span className="block size-[56px] shrink-0 lg:size-[80px]">
+      <svg className="block size-full" fill="none" height="80" preserveAspectRatio="xMidYMid meet" viewBox="0 0 80 80" width="80">
         <g id="Group 32">
           <circle cx="40" cy="40" id="Ellipse 15" r="39.5" stroke="#F48C06" />
           <path d={svgPaths.p3c24de80} fill="#F48C06" id="Arrow 2" />
         </g>
       </svg>
-    </div>
+    </span>
   );
 }
 
-function Group51() {
+/** The white "next" chip floating over the portrait. */
+function NextTestimonialButton() {
   return (
     <div className="absolute left-[calc(75%+68px)] size-[80px] top-[9130px]">
       <div className="absolute inset-[-70%_-75%_-80%_-75%]">
@@ -74,53 +79,88 @@ function Group51() {
 /**
  * Customer quote and rating.
  *
- * Absolutely positioned against the 1920px landing-page canvas.
+ * Copy and portrait share a two-column grid on wide screens; the quote card
+ * always sits below the portrait so it never overlaps it at narrow widths.
  */
 export default function TestimonialsSection() {
   return (
-    <div className="absolute contents left-[200px] top-[8842px]" data-name="Testimonials">
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[normal] left-[200px] text-[#2f327d] text-[60px] top-[8901px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        What They Say?
-      </p>
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[normal] left-[calc(8.33%+150px)] text-[#525596] text-[20px] top-[8842px] tracking-[4px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        TESTIMONIAL
-      </p>
-      <MaskGroup />
-      <div className="absolute bg-white h-[329px] left-[calc(50%+79px)] rounded-[20px] shadow-[2px_4px_60px_0px_rgba(41,44,124,0.1)] top-[9334px] w-[680px]" />
-      <div className="absolute bg-[#f67766] h-[329px] left-[calc(50%+79px)] rounded-bl-[20px] rounded-tl-[20px] shadow-[2px_4px_60px_0px_rgba(41,44,124,0.1)] top-[9334px] w-[14px]" />
-      <div className="absolute flex h-[139.014px] items-center justify-center left-[calc(50%+134px)] top-[9382.99px] w-0">
-        <div className="-rotate-90 flex-none">
-          <div className="h-0 relative w-[139.014px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" height="1" preserveAspectRatio="none" viewBox="0 0 139.014 1" width="139.014">
-                <line id="Line 3" stroke="#BDBDD1" x2="139.014" y1="0.5" y2="0.5" />
-              </svg>
+    <section className="py-12 lg:py-20" data-name="Testimonials">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="font-nunito text-fluid-sm tracking-[0.2em] text-brand-slate">
+              TESTIMONIAL
+            </p>
+            <span
+              aria-hidden="true"
+              className="mt-3 block h-px w-20 bg-brand-slate"
+            />
+
+            <h2 className="mt-8 font-nunito text-fluid-6xl font-bold text-brand-navy">
+              What They Say?
+            </h2>
+
+            <div className="mt-8 flex flex-col gap-6 font-poppins text-fluid-lg leading-[1.6] tracking-[0.02em] text-brand-muted lg:mt-12 lg:gap-10">
+              <p className="max-w-[607px]">
+                Skilline has got more than 100k positive ratings from our users
+                around the world.
+              </p>
+              <p className="max-w-[573px]">
+                Some of the students and teachers were greatly helped by the
+                Skilline.
+              </p>
+              <p>Are you too? Please give your assessment</p>
             </div>
+
+            <a
+              className="mt-10 inline-flex items-center gap-4 rounded-[80px] border border-solid border-brand-orange py-2 pl-8 pr-2 font-poppins text-fluid-base leading-[1.6] tracking-[0.02em] text-brand-orange transition-colors hover:bg-brand-orange/5 lg:pl-12"
+              href="#top"
+            >
+              Write your assessment
+              <ArrowBadge />
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-10">
+            <FigmaArt
+              className="mx-auto w-full max-w-[560px] lg:max-w-none"
+              height={740}
+              width={700}
+              x={955}
+              y={8822}
+            >
+              <ReviewerPhoto />
+              <NextTestimonialButton />
+            </FigmaArt>
+
+            <figure className="relative overflow-hidden rounded-[20px] bg-white px-6 py-8 shadow-[2px_4px_60px_0px_rgba(41,44,124,0.1)] sm:px-10 sm:py-12">
+              <span
+                aria-hidden="true"
+                className="absolute inset-y-0 left-0 w-[14px] bg-[#f67766]"
+              />
+
+              <blockquote className="ml-4 font-nunito text-fluid-base leading-[1.8] tracking-[0.02em] text-[#5f5f7e] sm:ml-8">
+                &ldquo;Thank you so much for your help. It&rsquo;s exactly what
+                I&rsquo;ve been looking for. You won&rsquo;t regret it. It really
+                saves me time and effort. Skilline is exactly what our business
+                has been lacking.&rdquo;
+              </blockquote>
+
+              <figcaption className="ml-4 mt-8 flex flex-wrap items-center justify-between gap-4 sm:ml-8">
+                <div>
+                  <p className="font-nunito text-fluid-md font-semibold leading-[1.8] text-[#5f5f7e]">
+                    Gloria Rose
+                  </p>
+                  <p className="font-nunito text-fluid-xs font-semibold leading-[1.8] tracking-[0.02em] text-[#80819a]">
+                    12 reviews at Yelp
+                  </p>
+                </div>
+                <RatingStars />
+              </figcaption>
+            </figure>
           </div>
         </div>
-      </div>
-      <div className="absolute h-0 left-[200px] top-[8856px] w-[80px]">
-        <div className="absolute inset-[-1px_0_0_0]">
-          <svg className="block size-full" fill="none" height="1" preserveAspectRatio="none" viewBox="0 0 80 1" width="80">
-            <line id="Line 4" stroke="#525596" x2="80" y1="0.5" y2="0.5" />
-          </svg>
-        </div>
-      </div>
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(58.33%+6px)] text-[#5f5f7e] text-[22px] top-[9375px] tracking-[0.44px] w-[534px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>{`"Thank you so much for your help. It's exactly what I've been looking for. You won't regret it. It really saves me time and effort. Skilline is exactly what our business has been lacking."`}</p>
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[1.8] left-[calc(58.33%+6px)] text-[#5f5f7e] text-[24px] top-[9578px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        Gloria Rose
-      </p>
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[1.8] left-[calc(75%+80px)] text-[#80819a] text-[18px] top-[9602px] tracking-[0.36px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        12 reviews at Yelp
-      </p>
-      <Group29 />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.6] left-[205px] not-italic text-[#696984] text-[26px] top-[9012px] tracking-[0.52px] w-[607px]">{`Skilline has got more than 100k positive ratings from our users around the world. `}</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.6] left-[205px] not-italic text-[#696984] text-[26px] top-[9122px] tracking-[0.52px] w-[573px]">Some of the students and teachers were greatly helped by the Skilline.</p>
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.6] left-[205px] not-italic text-[#696984] text-[26px] top-[9252px] tracking-[0.52px] whitespace-nowrap">Are you too? Please give your assessment</p>
-      <div className="absolute border border-[#f48c06] border-solid h-[80px] left-[200px] rounded-[80px] top-[9337px] w-[403px]" />
-      <p className="font-poppins font-normal [word-break:break-word] absolute leading-[1.6] left-[calc(8.33%+78px)] not-italic text-[#f48c06] text-[22px] top-[9360px] tracking-[0.44px] whitespace-nowrap">Write your assessment</p>
-      <Group32 />
-      <Group51 />
-    </div>
+      </Container>
+    </section>
   );
 }

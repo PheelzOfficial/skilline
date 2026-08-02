@@ -1,9 +1,40 @@
-import svgPaths from "@/assets/svg-paths";
+import type { ReactNode } from "react";
 
-function Google() {
+import svgPaths from "@/assets/svg-paths";
+import Container from "@/components/ui/Container";
+
+/**
+ * Holds one logo at its native aspect ratio while letting it shrink with the
+ * row. `flex-basis` keeps every logo optically the same size, and the
+ * `aspect-ratio` stops the SVG collapsing once it is no longer absolutely
+ * positioned.
+ */
+function Logo({
+  height,
+  name,
+  width,
+  children,
+}: {
+  height: number;
+  name: string;
+  width: number;
+  children: ReactNode;
+}) {
   return (
-    <div className="absolute h-[54.699px] left-[calc(8.33%+132px)] top-[1305.92px] w-[168.303px]" data-name="google-2015 1">
-      <svg className="absolute block inset-0 size-full" fill="none" height="54.6985" preserveAspectRatio="none" viewBox="0 0 168.303 54.6985" width="168.303">
+    <li
+      className="relative w-[96px] shrink-0 sm:w-[118px] lg:w-[140px] xl:w-[168px]"
+      data-name={name}
+      style={{ aspectRatio: `${width} / ${height}` }}
+    >
+      {children}
+    </li>
+  );
+}
+
+function GoogleLogo() {
+  return (
+    <Logo height={54.6985} name="google-2015 1" width={168.303}>
+      <svg className="absolute block inset-0 size-full" fill="none" height="54.6985" preserveAspectRatio="xMidYMid meet" viewBox="0 0 168.303 54.6985" width="168.303">
         <g clipPath="url(#clip0_0_36)" id="google-2015 1">
           <path d={svgPaths.p1a14d100} fill="#CFCFDE" id="Vector" />
           <path d={svgPaths.p1703a940} fill="#CFCFDE" id="Vector_2" />
@@ -18,26 +49,26 @@ function Google() {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </Logo>
   );
 }
 
 function GrabLogo() {
   return (
-    <div className="absolute h-[50.49px] left-[calc(75%+58.66px)] top-[1295.93px] w-[130.435px]" data-name="grab-logo">
-      <svg className="absolute block inset-0 size-full" fill="none" height="50.4896" preserveAspectRatio="none" viewBox="0 0 130.435 50.4896" width="130.435">
+    <Logo height={50.4896} name="grab-logo" width={130.435}>
+      <svg className="absolute block inset-0 size-full" fill="none" height="50.4896" preserveAspectRatio="xMidYMid meet" viewBox="0 0 130.435 50.4896" width="130.435">
         <g id="grab-logo">
           <path d={svgPaths.p4c9b900} fill="#CFCFDE" id="Vector" />
         </g>
       </svg>
-    </div>
+    </Logo>
   );
 }
 
-function Airbnb() {
+function AirbnbLogo() {
   return (
-    <div className="absolute h-[49.933px] left-[calc(33.33%+123.11px)] top-[1305.92px] w-[161.323px]" data-name="airbnb 1">
-      <svg className="absolute block inset-0 size-full" fill="none" height="49.9333" preserveAspectRatio="none" viewBox="0 0 161.323 49.9333" width="161.323">
+    <Logo height={49.9333} name="airbnb 1" width={161.323}>
+      <svg className="absolute block inset-0 size-full" fill="none" height="49.9333" preserveAspectRatio="xMidYMid meet" viewBox="0 0 161.323 49.9333" width="161.323">
         <g clipPath="url(#clip0_0_34)" id="airbnb 1">
           <path d={svgPaths.p11a0ca00} fill="#CFCFDE" id="Vector" />
         </g>
@@ -47,14 +78,14 @@ function Airbnb() {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </Logo>
   );
 }
 
-function Netflix() {
+function NetflixLogo() {
   return (
-    <div className="absolute h-[40.715px] left-[calc(25%+56.04px)] top-[1315.14px] w-[151.336px]" data-name="netflix-3 1">
-      <svg className="absolute block inset-0 size-full" fill="none" height="40.7149" preserveAspectRatio="none" viewBox="0 0 151.336 40.7149" width="151.336">
+    <Logo height={40.7149} name="netflix-3 1" width={151.336}>
+      <svg className="absolute block inset-0 size-full" fill="none" height="40.7149" preserveAspectRatio="xMidYMid meet" viewBox="0 0 151.336 40.7149" width="151.336">
         <g clipPath="url(#clip0_0_32)" id="netflix-3 1">
           <path d={svgPaths.p19855700} fill="#CFCFDE" id="Vector" />
         </g>
@@ -64,78 +95,59 @@ function Netflix() {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </Logo>
   );
 }
 
-function Group35() {
+function AmazonLogo() {
   return (
-    <div className="absolute flex inset-0 items-center justify-center" style={{ containerType: "size" }}>
-      <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
-        <div className="relative size-full" data-name="Group">
-          <svg className="absolute block inset-0 size-full" fill="none" height="46.0923" preserveAspectRatio="none" viewBox="0 0 153.634 46.0923" width="153.634">
-            <g id="Group">
-              <path clipRule="evenodd" d={svgPaths.p399a6480} fill="#CFCFDE" fillRule="evenodd" id="Vector" />
-              <path clipRule="evenodd" d={svgPaths.p1bea89f2} fill="#CFCFDE" fillRule="evenodd" id="Vector_2" />
-              <path clipRule="evenodd" d={svgPaths.p2582b380} fill="#CFCFDE" fillRule="evenodd" id="Vector_3" />
-            </g>
-          </svg>
-        </div>
-      </div>
-    </div>
+    <Logo height={46.0923} name="amazon-2 (1) 1" width={153.634}>
+      {/* The export ships this mark upside-down, so it is flipped back here. */}
+      <svg className="absolute block inset-0 size-full rotate-180" fill="none" height="46.0923" preserveAspectRatio="xMidYMid meet" viewBox="0 0 153.634 46.0923" width="153.634">
+        <g id="Group">
+          <path clipRule="evenodd" d={svgPaths.p399a6480} fill="#CFCFDE" fillRule="evenodd" id="Vector" />
+          <path clipRule="evenodd" d={svgPaths.p1bea89f2} fill="#CFCFDE" fillRule="evenodd" id="Vector_2" />
+          <path clipRule="evenodd" d={svgPaths.p2582b380} fill="#CFCFDE" fillRule="evenodd" id="Vector_3" />
+        </g>
+      </svg>
+    </Logo>
   );
 }
 
-function Amazon() {
+function FacebookLogo() {
   return (
-    <div className="absolute flex h-[46.092px] items-center justify-center left-[calc(50%+40.17px)] top-[1317.44px] w-[153.641px]">
-      <div className="flex-none rotate-180">
-        <div className="h-[46.092px] overflow-clip relative w-[153.641px]" data-name="amazon-2 (1) 1">
-          <Group35 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Facebook() {
-  return (
-    <div className="absolute h-[38.41px] left-[calc(58.33%+109.55px)] top-[1306.69px] w-[193.371px]" data-name="facebook">
-      <svg className="absolute block inset-0 size-full" fill="none" height="38.4103" preserveAspectRatio="none" viewBox="0 0 193.371 38.4103" width="193.371">
+    <Logo height={38.4103} name="facebook" width={193.371}>
+      <svg className="absolute block inset-0 size-full" fill="none" height="38.4103" preserveAspectRatio="xMidYMid meet" viewBox="0 0 193.371 38.4103" width="193.371">
         <g id="facebook">
           <path d={svgPaths.p26418ff0} fill="#CFCFDE" id="Vector" />
         </g>
       </svg>
-    </div>
-  );
-}
-
-function Group34() {
-  return (
-    <div className="absolute contents left-[calc(8.33%+132px)] top-[1295.93px]">
-      <Google />
-      <GrabLogo />
-      <Airbnb />
-      <Netflix />
-      <Amazon />
-      <Facebook />
-    </div>
+    </Logo>
   );
 }
 
 /**
  * Logos of companies using Skilline.
  *
- * Absolutely positioned against the 1920px landing-page canvas.
+ * The row wraps: six across on desktop, three on tablet, two on a phone.
  */
 export default function PartnerLogosSection() {
   return (
-    <div className="absolute contents left-[calc(8.33%+132px)] top-[1218px]" data-name="Company">
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[0] left-[calc(25%+179px)] not-italic text-[#696984] text-[0px] top-[1218px] tracking-[0.56px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-medium leading-[1.6] text-[28px]">Trusted by 5,000+</span>
-        <span className="font-poppins font-medium leading-[1.6] text-[28px]">{` Companies Worldwide`}</span>
-      </p>
-      <Group34 />
-    </div>
+    <section className="py-14 lg:py-20" data-name="Company">
+      <Container>
+        <p className="text-center font-poppins text-fluid-lg font-medium leading-[1.6] tracking-[0.02em] text-brand-muted">
+          Trusted by 5,000+ Companies Worldwide
+        </p>
+
+        <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-8 sm:gap-x-12 lg:mt-16 lg:justify-between lg:gap-x-6">
+          <GoogleLogo />
+          <NetflixLogo />
+          <AirbnbLogo />
+          <AmazonLogo />
+          <FacebookLogo />
+          <GrabLogo />
+        </ul>
+      </Container>
+    </section>
   );
 }

@@ -1,4 +1,6 @@
 import svgPaths from "@/assets/svg-paths";
+import FeatureRow from "@/components/sections/features/FeatureRow";
+import FigmaArt from "@/components/ui/FigmaArt";
 import {
   imgImage19,
   imgPortraitTeacherGivingOnlineClass4,
@@ -11,19 +13,7 @@ import imgImage10 from "@/assets/images/image-10.png";
 import imgImage11 from "@/assets/images/image-11.png";
 import imgImage13 from "@/assets/images/image-13.png";
 
-function Group119() {
-  return (
-    <div className="[word-break:break-word] absolute contents left-[calc(58.33%+17px)] not-italic top-[7440px]">
-      <p className="font-poppins font-normal absolute leading-[1.8] left-[calc(58.33%+17px)] text-[#696984] text-[22px] top-[7588px] tracking-[0.44px] w-[540px]">Teachers and teacher assistants can talk with students privately without leaving the Zoom environment.</p>
-      <p className="font-nunito font-bold absolute leading-[0] left-[calc(58.33%+17px)] text-[#2f327d] text-[40px] top-[7440px] w-[274px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-semibold leading-[1.6]">{`One-on-One `}</span>
-        <span className="font-poppins font-semibold leading-[1.6] text-[#f48c06]">Discussions</span>
-      </p>
-    </div>
-  );
-}
-
-function Group82() {
+function ClassroomWindowChrome() {
   return (
     <div className="absolute h-[365.476px] left-[209.83px] top-[7355.07px] w-[658.115px]">
       <svg className="absolute block inset-0 size-full" fill="none" height="365.476" preserveAspectRatio="none" viewBox="0 0 658.115 365.476" width="658.115">
@@ -39,7 +29,7 @@ function Group82() {
   );
 }
 
-function Group84() {
+function PresentButton() {
   return (
     <div className="absolute contents left-[calc(8.33%+85.93px)] top-[7650.93px]">
       <div className="absolute bg-[#3465e1] h-[38.675px] left-[calc(8.33%+85.93px)] rounded-[38.675px] shadow-[0px_6.446px_15.47px_0px_rgba(52,101,225,0.3)] top-[7650.93px] w-[116.024px]" />
@@ -50,7 +40,7 @@ function Group84() {
   );
 }
 
-function Phone1() {
+function PhoneIcon() {
   return (
     <div className="absolute left-[calc(16.67%+99.96px)] size-[12.892px] top-[7663.82px]" data-name="phone 1">
       <svg className="absolute block inset-0 size-full" fill="none" height="12.8916" preserveAspectRatio="none" viewBox="0 0 12.8916 12.8916" width="12.8916">
@@ -69,19 +59,19 @@ function Phone1() {
   );
 }
 
-function Group85() {
+function CallButton() {
   return (
     <div className="absolute contents left-[calc(16.67%+67.73px)] top-[7650.93px]">
       <div className="absolute bg-[#e13468] h-[38.675px] left-[calc(16.67%+67.73px)] rounded-[38.675px] shadow-[0px_6.446px_15.47px_0px_rgba(202,47,93,0.3)] top-[7650.93px] w-[116.024px]" />
       <p className="font-nunito font-bold [word-break:break-word] absolute h-[22.56px] leading-[normal] left-[calc(16.67%+119.94px)] text-[16.759px] text-white top-[7658.67px] w-[31.584px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Call
       </p>
-      <Phone1 />
+      <PhoneIcon />
     </div>
   );
 }
 
-function MaskGroup13() {
+function AdamLevinPhoto() {
   return (
     <div className="absolute contents left-[calc(33.33%+69.72px)] top-[7425.33px]" data-name="Mask Group">
       <div className="absolute h-[121.799px] left-[calc(33.33%+55.02px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[14.7px_0px] mask-size-[125.999px_121.799px] top-[7425.33px] w-[156.239px]" style={{ maskImage: `url("${imgImage19}")` }} data-name="image 8">
@@ -91,7 +81,7 @@ function MaskGroup13() {
   );
 }
 
-function Group98() {
+function AdamLevinSignalBars() {
   return (
     <div className="absolute contents left-[calc(33.33%+80.64px)] top-[7529.49px]">
       <div className="absolute bg-white h-[2.94px] left-[calc(33.33%+80.64px)] rounded-[0.42px] top-[7532.43px] w-[1.26px]" />
@@ -101,28 +91,28 @@ function Group98() {
   );
 }
 
-function Group97() {
+function AdamLevinNamePlate() {
   return (
     <div className="absolute contents left-[calc(33.33%+76.44px)] top-[7524.03px]">
       <div className="absolute backdrop-blur-[4.2px] bg-[rgba(201,211,231,0.4)] h-[16.38px] left-[calc(33.33%+76.44px)] rounded-[4.2px] top-[7524.03px] w-[63.84px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[11.34px] leading-[normal] left-[calc(33.33%+90.3px)] text-[8.4px] text-white top-[7526.55px] w-[45.78px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Adam Levin
       </p>
-      <Group98 />
+      <AdamLevinSignalBars />
     </div>
   );
 }
 
-function Group87() {
+function AdamLevinTile() {
   return (
     <div className="absolute contents left-[calc(33.33%+69.72px)] top-[7425.33px]">
-      <MaskGroup13 />
-      <Group97 />
+      <AdamLevinPhoto />
+      <AdamLevinNamePlate />
     </div>
   );
 }
 
-function MaskGroup14() {
+function TamaraClarkePhoto() {
   return (
     <div className="absolute contents left-[calc(25%+77.26px)] top-[7425.33px]" data-name="Mask Group">
       <div className="absolute h-[119.279px] left-[calc(25%+67.18px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[10.08px_-2.52px] mask-size-[125.999px_121.799px] top-[7427.85px] w-[146.159px]" style={{ maskImage: `url("${imgImage19}")` }} data-name="image 7">
@@ -132,7 +122,7 @@ function MaskGroup14() {
   );
 }
 
-function Group101() {
+function TamaraClarkeSignalBars() {
   return (
     <div className="absolute contents left-[calc(25%+88.18px)] top-[7529.49px]">
       <div className="absolute bg-white h-[2.94px] left-[calc(25%+88.18px)] rounded-[0.42px] top-[7532.43px] w-[1.26px]" />
@@ -142,28 +132,28 @@ function Group101() {
   );
 }
 
-function Group100() {
+function TamaraClarkeNamePlate() {
   return (
     <div className="absolute contents left-[calc(25%+83.98px)] top-[7524.03px]">
       <div className="absolute backdrop-blur-[4.2px] bg-[rgba(201,211,231,0.4)] h-[16.38px] left-[calc(25%+83.98px)] rounded-[4.2px] top-[7524.03px] w-[73.5px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[11.34px] leading-[normal] left-[calc(25%+97.84px)] text-[8.4px] text-white top-[7526.55px] w-[55.44px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Tamara Clarke
       </p>
-      <Group101 />
+      <TamaraClarkeSignalBars />
     </div>
   );
 }
 
-function Group99() {
+function TamaraClarkeTile() {
   return (
     <div className="absolute contents left-[calc(25%+77.26px)] top-[7425.33px]">
-      <MaskGroup14 />
-      <Group100 />
+      <TamaraClarkePhoto />
+      <TamaraClarkeNamePlate />
     </div>
   );
 }
 
-function MaskGroup15() {
+function InstructorPhoto() {
   return (
     <div className="absolute contents left-[calc(8.33%+93.34px)] top-[7444.72px]" data-name="Mask Group">
       <div className="absolute h-[171.974px] left-[224.28px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[29.058px_0px] mask-size-[177.904px_171.974px] opacity-50 rounded-[12.892px] top-[7444.72px] w-[256.774px]" style={{ maskImage: `url("${imgPortraitTeacherGivingOnlineClass4}")` }} data-name="portrait-teacher-giving-online-class 1">
@@ -173,7 +163,7 @@ function MaskGroup15() {
   );
 }
 
-function MaskGroup16() {
+function InstructorPhotoMask() {
   return (
     <div className="absolute h-[186.928px] left-[calc(8.33%+85.61px)] top-[7424.74px] w-[193.374px]" data-name="Mask Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="186.928" preserveAspectRatio="none" viewBox="0 0 193.374 186.928" width="193.374">
@@ -191,16 +181,16 @@ function MaskGroup16() {
   );
 }
 
-function Group102() {
+function InstructorTile() {
   return (
     <div className="absolute contents left-[calc(8.33%+85.61px)] top-[7424.74px]">
-      <MaskGroup15 />
-      <MaskGroup16 />
+      <InstructorPhoto />
+      <InstructorPhotoMask />
     </div>
   );
 }
 
-function MaskGroup17() {
+function HumbertHollandPhoto() {
   return (
     <div className="absolute contents left-[calc(25%+77.26px)] top-[7566.03px]" data-name="Mask Group">
       <div className="absolute h-[189.419px] left-[calc(25%+77.26px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[125.999px_121.799px] top-[7566.03px] w-[125.999px]" style={{ maskImage: `url("${imgImage19}")` }} data-name="image 11">
@@ -210,7 +200,7 @@ function MaskGroup17() {
   );
 }
 
-function Group108() {
+function HumbertHollandSignalBars() {
   return (
     <div className="absolute contents left-[calc(25%+88.18px)] top-[7670.19px]">
       <div className="absolute bg-white h-[2.94px] left-[calc(25%+88.18px)] rounded-[0.42px] top-[7673.13px] w-[1.26px]" />
@@ -220,28 +210,28 @@ function Group108() {
   );
 }
 
-function Group105() {
+function HumbertHollandNamePlate() {
   return (
     <div className="absolute contents left-[calc(25%+83.98px)] top-[7664.73px]">
       <div className="absolute backdrop-blur-[4.2px] bg-[rgba(201,211,231,0.4)] h-[16.38px] left-[calc(25%+83.98px)] rounded-[4.2px] top-[7664.73px] w-[85.679px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[11.34px] leading-[normal] left-[calc(25%+97.84px)] text-[8.4px] text-white top-[7667.25px] w-[67.62px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Humbert Holland
       </p>
-      <Group108 />
+      <HumbertHollandSignalBars />
     </div>
   );
 }
 
-function Group103() {
+function HumbertHollandTile() {
   return (
     <div className="absolute contents left-[calc(25%+77.26px)] top-[7566.03px]">
-      <MaskGroup17 />
-      <Group105 />
+      <HumbertHollandPhoto />
+      <HumbertHollandNamePlate />
     </div>
   );
 }
 
-function MaskGroup18() {
+function PatriciaMendozaPhoto() {
   return (
     <div className="absolute contents left-[calc(33.33%+69.72px)] top-[7566.03px]" data-name="Mask Group">
       <div className="absolute left-[calc(33.33%+43.26px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[26.46px_18.9px] mask-size-[125.999px_121.799px] size-[178.919px] top-[7547.13px]" style={{ maskImage: `url("${imgImage19}")` }} data-name="image 10">
@@ -251,7 +241,7 @@ function MaskGroup18() {
   );
 }
 
-function Group112() {
+function PatriciaMendozaSignalBars() {
   return (
     <div className="absolute contents left-[calc(33.33%+80.64px)] top-[7670.19px]">
       <div className="absolute bg-white h-[2.94px] left-[calc(33.33%+80.64px)] rounded-[0.42px] top-[7673.13px] w-[1.26px]" />
@@ -261,44 +251,44 @@ function Group112() {
   );
 }
 
-function Group110() {
+function PatriciaMendozaNamePlate() {
   return (
     <div className="absolute contents left-[calc(33.33%+76.44px)] top-[7664.73px]">
       <div className="absolute backdrop-blur-[4.2px] bg-[rgba(201,211,231,0.4)] h-[16.38px] left-[calc(33.33%+76.44px)] rounded-[4.2px] top-[7664.73px] w-[83.579px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[11.34px] leading-[normal] left-[calc(33.33%+90.3px)] text-[8.4px] text-white top-[7667.25px] w-[65.52px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Patricia Mendoza
       </p>
-      <Group112 />
+      <PatriciaMendozaSignalBars />
     </div>
   );
 }
 
-function Group109() {
+function PatriciaMendozaTile() {
   return (
     <div className="absolute contents left-[calc(33.33%+69.72px)] top-[7566.03px]">
-      <MaskGroup18 />
-      <Group110 />
+      <PatriciaMendozaPhoto />
+      <PatriciaMendozaNamePlate />
     </div>
   );
 }
 
-function Group104() {
+function ClassroomWindow() {
   return (
     <div className="absolute contents left-[209.83px] top-[7355.07px]">
-      <Group82 />
-      <Group84 />
-      <Group85 />
-      <Group87 />
-      <Group99 />
-      <Group102 />
-      <Group103 />
-      <Group109 />
+      <ClassroomWindowChrome />
+      <PresentButton />
+      <CallButton />
+      <AdamLevinTile />
+      <TamaraClarkeTile />
+      <InstructorTile />
+      <HumbertHollandTile />
+      <PatriciaMendozaTile />
       <div className="absolute backdrop-blur-[4.708px] bg-[rgba(136,167,227,0.1)] h-[363.423px] left-[209.83px] rounded-[18.83px] top-[7356.95px] w-[658.115px]" />
     </div>
   );
 }
 
-function MaskGroup19() {
+function PrivateInstructorPhoto() {
   return (
     <div className="absolute contents left-[calc(8.33%+206.99px)] top-[7516.07px]" data-name="Mask Group">
       <div className="absolute h-[192.538px] left-[calc(8.33%+174.45px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[32.532px_0px] mask-size-[199.177px_192.538px] rounded-[12.892px] top-[7516.07px] w-[287.479px]" style={{ maskImage: `url("${imgPortraitTeacherGivingOnlineClass5}")` }} data-name="portrait-teacher-giving-online-class 1">
@@ -308,15 +298,15 @@ function MaskGroup19() {
   );
 }
 
-function Group126() {
+function PrivateInstructorTile() {
   return (
     <div className="absolute contents left-[calc(8.33%+206.99px)] top-[7516.07px]">
-      <MaskGroup19 />
+      <PrivateInstructorPhoto />
     </div>
   );
 }
 
-function MaskGroup20() {
+function PrivateParticipantPhoto() {
   return (
     <div className="absolute contents left-[calc(25%+169.52px)] top-[7516.07px]" data-name="Mask Group">
       <div className="absolute left-[calc(25%+127.76px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[41.759px_29.829px] mask-size-[198.853px_192.225px] size-[282.372px] top-[7486.24px]" style={{ maskImage: `url("${imgImage20}")` }} data-name="image 10">
@@ -326,7 +316,7 @@ function MaskGroup20() {
   );
 }
 
-function Group129() {
+function PrivateParticipantSignalBars() {
   return (
     <div className="absolute contents left-[calc(33.33%+26.75px)] top-[7680.45px]">
       <div className="absolute bg-white h-[4.64px] left-[calc(33.33%+26.75px)] rounded-[0.663px] top-[7685.09px] w-[1.989px]" />
@@ -336,28 +326,28 @@ function Group129() {
   );
 }
 
-function Group128() {
+function PrivateParticipantNamePlate() {
   return (
     <div className="absolute contents left-[calc(33.33%+20.12px)] top-[7671.84px]">
       <div className="absolute backdrop-blur-[6.628px] bg-[rgba(201,211,231,0.4)] h-[25.851px] left-[calc(33.33%+20.12px)] rounded-[6.628px] top-[7671.84px] w-[131.906px]" />
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[17.897px] leading-[normal] left-[calc(33.33%+41.99px)] text-[13.257px] text-white top-[7675.81px] w-[103.404px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Patricia Mendoza
       </p>
-      <Group129 />
+      <PrivateParticipantSignalBars />
     </div>
   );
 }
 
-function Group127() {
+function PrivateParticipantTile() {
   return (
     <div className="absolute contents left-[calc(25%+169.52px)] top-[7516.07px]">
-      <MaskGroup20 />
-      <Group128 />
+      <PrivateParticipantPhoto />
+      <PrivateParticipantNamePlate />
     </div>
   );
 }
 
-function Group130() {
+function EndDiscussionButton() {
   return (
     <div className="absolute contents left-[calc(33.33%+29.29px)] top-[7748.62px]">
       <div className="absolute bg-[#eb493a] blur-[25.421px] h-[27.304px] left-[calc(33.33%+40.58px)] rounded-[56.491px] top-[7771.22px] w-[172.296px]" />
@@ -367,7 +357,7 @@ function Group130() {
   );
 }
 
-function Group131() {
+function PrivateWindowChrome() {
   return (
     <div className="absolute h-[12.24px] left-[calc(8.33%+181.64px)] top-[7460.99px] w-[48.958px]">
       <svg className="absolute block inset-0 size-full" fill="none" height="12.2397" preserveAspectRatio="none" viewBox="0 0 48.9585 12.2397" width="48.9585">
@@ -381,21 +371,21 @@ function Group131() {
   );
 }
 
-function Group113() {
+function PrivateDiscussionPanel() {
   return (
     <div className="absolute contents left-[calc(8.33%+153.4px)] top-[7454.87px]">
       <div className="absolute bg-white h-[368.13px] left-[calc(8.33%+153.4px)] rounded-[18.83px] shadow-[0px_18.83px_47.075px_0px_rgba(47,50,125,0.1)] top-[7454.87px] w-[591.268px]" />
       <div className="absolute bg-[#eaeaea] h-[24.479px] left-[calc(8.33%+153.4px)] rounded-tl-[18.83px] rounded-tr-[18.83px] top-[7454.87px] w-[591.268px]" />
-      <Group126 />
-      <Group127 />
-      <Group130 />
+      <PrivateInstructorTile />
+      <PrivateParticipantTile />
+      <EndDiscussionButton />
       <p className="font-nunito font-bold [word-break:break-word] absolute h-[35.777px] leading-[1.6] left-[calc(8.33%+191.06px)] text-[#696984] text-[22.596px] top-[7743.91px] w-[192.068px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Private Discussion
       </p>
       <p className="font-nunito font-semibold [word-break:break-word] absolute h-[27.304px] leading-[1.6] left-[calc(8.33%+191.06px)] text-[#a8a8b6] text-[16.947px] top-[7776.87px] w-[262.681px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
         Your video can’t be seen by others
       </p>
-      <Group131 />
+      <PrivateWindowChrome />
       <div className="absolute flex h-[197.717px] items-center justify-center left-[calc(25%+129.03px)] top-[7516.07px] w-0">
         <div className="flex-none rotate-90">
           <div className="h-0 relative w-[197.717px]">
@@ -411,7 +401,7 @@ function Group113() {
   );
 }
 
-function Group132() {
+function PrivateDiscussionBadge() {
   return (
     <div className="absolute flex items-center justify-center left-[calc(8.33%+95.02px)] size-[111.025px] top-[7482.17px]">
       <div className="flex-none rotate-[-6.16deg]">
@@ -460,7 +450,7 @@ function Group132() {
   );
 }
 
-function Group106() {
+function DiscussionsIllustration() {
   return (
     <div className="absolute contents left-[191px] top-[7324px]">
       <div className="absolute left-[calc(33.33%+149.8px)] size-[112.981px] top-[7324px]">
@@ -480,23 +470,34 @@ function Group106() {
         </div>
       </div>
       <div className="absolute bg-[#73bcff] h-[193.009px] left-[191px] rounded-[18.83px] top-[7547.14px] w-[196.775px]" />
-      <Group104 />
-      <Group113 />
-      <Group132 />
+      <ClassroomWindow />
+      <PrivateDiscussionPanel />
+      <PrivateDiscussionBadge />
     </div>
   );
 }
 
 /**
  * Private teacher/student side conversations.
- *
- * Absolutely positioned against the 1920px landing-page canvas.
  */
 export default function OneOnOneDiscussionsFeature() {
   return (
-    <div className="absolute contents left-[191px] top-[7324px]">
-      <Group119 />
-      <Group106 />
-    </div>
+    <FeatureRow
+      art={
+        <FigmaArt className="w-full" height={539} width={795} x={171} y={7304}>
+          <DiscussionsIllustration />
+        </FigmaArt>
+      }
+      artFirst
+    >
+      <h3 className="max-w-[274px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+        One-on-One <span className="text-brand-orange">Discussions</span>
+      </h3>
+
+      <p className="mt-8 max-w-[540px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+        Teachers and teacher assistants can talk with students privately without
+        leaving the Zoom environment.
+      </p>
+    </FeatureRow>
   );
 }

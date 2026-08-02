@@ -3,32 +3,44 @@ import ClassManagementFeature from "@/components/sections/features/ClassManageme
 import OneOnOneDiscussionsFeature from "@/components/sections/features/OneOnOneDiscussionsFeature";
 import TeachingToolsFeature from "@/components/sections/features/TeachingToolsFeature";
 import UserInterfaceFeature from "@/components/sections/features/UserInterfaceFeature";
+import Container from "@/components/ui/Container";
 
-function Group37() {
-  return (
-    <div className="absolute contents left-[calc(41.67%+20px)] top-[7973px]">
-      <div className="absolute border border-[#f48c06] border-solid h-[80px] left-[calc(41.67%+20px)] rounded-[80px] top-[7973px] w-[280px]" />
-      <p className="font-nunito font-normal [word-break:break-word] absolute leading-[1.8] left-[calc(41.67%+58px)] text-[#f48c06] text-[24px] top-[7992px] tracking-[0.48px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        See more features
-      </p>
-    </div>
-  );
-}
-
+/**
+ * Feature showcase.
+ *
+ * Each child row alternates copy and artwork on wide screens and stacks into a
+ * single column below `lg`.
+ */
 export default function FeaturesSection() {
   return (
-    <div className="absolute contents left-[170px] top-[3983px]" data-name="Our Features">
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[0] left-[calc(41.67%+41px)] not-italic text-[#2f327d] text-[36px] top-[3983px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-bold leading-[1.8]">{`Our `}</span>
-        <span className="font-poppins font-bold leading-[1.8] text-[#f48c06]">Features</span>
-      </p>
-      <p className="font-poppins font-normal -translate-x-1/2 [word-break:break-word] absolute leading-[1.8] left-[calc(25%+480px)] not-italic text-[#696984] text-[24px] text-center top-[4068px] whitespace-nowrap">This very extraordinary feature, can make learning activities more efficient</p>
-      <Group37 />
-      <UserInterfaceFeature />
-      <TeachingToolsFeature />
-      <AssessmentsFeature />
-      <ClassManagementFeature />
-      <OneOnOneDiscussionsFeature />
-    </div>
+    <section className="py-12 lg:py-20" data-name="Our Features">
+      <Container>
+        <h2 className="text-center font-poppins text-fluid-3xl font-bold leading-[1.8] text-brand-navy">
+          Our <span className="text-brand-orange">Features</span>
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-[820px] text-center font-poppins text-fluid-md leading-[1.8] text-brand-muted">
+          This very extraordinary feature, can make learning activities more
+          efficient
+        </p>
+
+        <div className="mt-16 flex flex-col gap-20 lg:mt-24 lg:gap-28">
+          <UserInterfaceFeature />
+          <TeachingToolsFeature />
+          <AssessmentsFeature />
+          <ClassManagementFeature />
+          <OneOnOneDiscussionsFeature />
+        </div>
+
+        <div className="mt-16 flex justify-center lg:mt-24">
+          <a
+            className="rounded-[80px] border border-solid border-brand-orange px-10 py-4 font-nunito text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-orange transition-colors hover:bg-brand-orange hover:text-white lg:px-14 lg:py-6"
+            href="#top"
+          >
+            See more features
+          </a>
+        </div>
+      </Container>
+    </section>
   );
 }

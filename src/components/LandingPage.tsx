@@ -12,23 +12,25 @@ import WhatYouCanDoSection from "@/components/sections/WhatYouCanDoSection";
 /**
  * Skilline marketing landing page.
  *
- * Rendered from a Figma export, so every section is absolutely positioned
- * against a fixed 1920x11494px canvas. Sections are listed back-to-front:
- * the header paints last so its artwork overlaps the sections below it.
+ * Sections stack in reading order. Layout is fluid throughout: copy reflows,
+ * grids collapse column by column, and the illustration clusters carried over
+ * from the Figma export scale proportionally inside their columns.
  */
 export default function LandingPage() {
   return (
-    <div className="bg-white relative size-full">
-      <SiteFooter />
-      <NewsSection />
-      <TestimonialsSection />
-      <IntegrationsSection />
-      <FeaturesSection />
-      <WhatYouCanDoSection />
-      <WhatIsSkillineSection />
-      <AllInOneSection />
-      <PartnerLogosSection />
+    <div className="bg-white">
       <HeroSection />
+      <main>
+        <PartnerLogosSection />
+        <AllInOneSection />
+        <WhatIsSkillineSection />
+        <WhatYouCanDoSection />
+        <FeaturesSection />
+        <IntegrationsSection />
+        <TestimonialsSection />
+        <NewsSection />
+      </main>
+      <SiteFooter />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import svgPaths from "@/assets/svg-paths";
+import FeatureRow from "@/components/sections/features/FeatureRow";
+import FigmaArt from "@/components/ui/FigmaArt";
 import {
   imgImage18,
 } from "@/assets/image-placeholders";
@@ -7,7 +9,7 @@ import imgImage10 from "@/assets/images/image-10.png";
 import imgImage11 from "@/assets/images/image-11.png";
 import imgImage13 from "@/assets/images/image-13.png";
 
-function Group91() {
+function ExportButton() {
   return (
     <div className="absolute contents left-[calc(75%+37.44px)] top-[7060.18px]">
       <div className="absolute bg-[#545ae8] blur-[27px] h-[28.949px] left-[calc(75%+49.43px)] rounded-[60px] top-[7090.13px] w-[145.937px]" />
@@ -17,7 +19,7 @@ function Group91() {
   );
 }
 
-function MaskGroup9() {
+function GradebookAvatar1() {
   return (
     <div className="absolute contents left-[calc(50%+87.63px)] top-[6812.62px]" data-name="Mask Group">
       <div className="absolute h-[127.658px] left-[calc(50%+87.63px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[85.218px_85.105px] top-[6812.62px] w-[85.218px]" style={{ maskImage: `url("${imgImage18}")` }} data-name="image 11">
@@ -27,7 +29,7 @@ function MaskGroup9() {
   );
 }
 
-function MaskGroup10() {
+function GradebookAvatar2() {
   return (
     <div className="absolute contents left-[calc(58.33%+69.56px)] top-[6963.35px]" data-name="Mask Group">
       <div className="absolute h-[85.105px] left-[calc(58.33%+59.34px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[10.226px_0px] mask-size-[85.218px_85.105px] top-[6963.35px] w-[105.67px]" style={{ maskImage: `url("${imgImage18}")` }} data-name="image 7">
@@ -37,7 +39,7 @@ function MaskGroup10() {
   );
 }
 
-function MaskGroup11() {
+function GradebookAvatar3() {
   return (
     <div className="absolute contents left-[calc(66.67%+59.5px)] top-[6789.66px]" data-name="Mask Group">
       <div className="absolute h-[85.105px] left-[calc(66.67%+51.83px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[7.67px_0px] mask-size-[85.218px_85.105px] top-[6789.66px] w-[109.079px]" style={{ maskImage: `url("${imgImage18}")` }} data-name="image 8">
@@ -47,7 +49,7 @@ function MaskGroup11() {
   );
 }
 
-function MaskGroup12() {
+function GradebookAvatar4() {
   return (
     <div className="absolute contents left-[calc(75%+65.43px)] top-[6906.45px]" data-name="Mask Group">
       <div className="absolute h-[125.956px] left-[calc(75%+44.97px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[20.452px_11.915px] mask-size-[85.218px_85.105px] top-[6894.54px] w-[126.123px]" style={{ maskImage: `url("${imgImage18}")` }} data-name="image 10">
@@ -57,7 +59,7 @@ function MaskGroup12() {
   );
 }
 
-function Group94() {
+function TopGradeStarBadge() {
   return (
     <div className="absolute flex h-[158.537px] items-center justify-center left-[calc(41.67%+123.68px)] top-[6604px] w-[158.778px]">
       <div className="flex-none rotate-[-13.28deg] skew-x-[0.05deg]">
@@ -112,7 +114,7 @@ function Group94() {
   );
 }
 
-function Group2() {
+function BookIconShape() {
   return (
     <div className="absolute inset-[0_14.06%]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" height="43.8653" preserveAspectRatio="none" viewBox="0 0 31.5653 43.8653" width="31.5653">
@@ -125,19 +127,19 @@ function Group2() {
   );
 }
 
-function Book() {
+function BookIcon() {
   return (
     <div className="absolute flex h-[53.034px] items-center justify-center left-[calc(83.33%+44.79px)] top-[6727.28px] w-[53.104px]">
       <div className="flex-none rotate-[13.74deg] skew-x-[-0.04deg]">
         <div className="h-[43.865px] overflow-clip relative w-[43.917px]" data-name="book 1">
-          <Group2 />
+          <BookIconShape />
         </div>
       </div>
     </div>
   );
 }
 
-function Group95() {
+function BookBadge() {
   return (
     <div className="absolute contents h-[120.697px] left-[calc(83.33%+11.14px)] top-[6693.83px] w-[120.858px]">
       <div className="absolute flex h-[120.697px] items-center justify-center left-[calc(83.33%+11.14px)] top-[6693.83px] w-[120.857px]">
@@ -188,12 +190,12 @@ function Group95() {
           </div>
         </div>
       </div>
-      <Book />
+      <BookIcon />
     </div>
   );
 }
 
-function Group96() {
+function GradeTrendLines() {
   return (
     <div className="absolute h-[34.811px] left-[calc(41.67%+126.68px)] top-[7088.13px] w-[82.195px]">
       <div className="absolute inset-[-4.31%_-0.47%_-4.31%_-1.35%]">
@@ -209,7 +211,7 @@ function Group96() {
   );
 }
 
-function Group124() {
+function GradebookCard() {
   return (
     <div className="absolute contents left-[calc(41.67%+123.68px)] top-[6604px]">
       <div className="absolute flex h-[207.634px] items-center justify-center left-[calc(41.67%+149.67px)] top-[6956.37px] w-[288.874px]">
@@ -234,11 +236,11 @@ function Group124() {
       <div className="absolute bg-[#3189ef] h-[29.947px] left-[calc(66.67%+102.48px)] top-[6817.61px] w-[304.867px]" />
       <div className="absolute bg-[#f13c3c] h-[29.947px] left-[calc(83.33%-58.59px)] top-[6939.4px] w-[145.937px]" />
       <p className="font-poppins font-semibold [word-break:break-word] absolute h-[34.938px] leading-[1.6] left-[calc(66.67%-13.47px)] not-italic text-[#f2fdff] text-[22px] top-[6682.85px] w-[124.946px]">GradeBook</p>
-      <Group91 />
-      <MaskGroup9 />
-      <MaskGroup10 />
-      <MaskGroup11 />
-      <MaskGroup12 />
+      <ExportButton />
+      <GradebookAvatar1 />
+      <GradebookAvatar2 />
+      <GradebookAvatar3 />
+      <GradebookAvatar4 />
       <div className="absolute bg-[#cdf3ff] h-[49.912px] left-[calc(58.33%-11.4px)] rounded-[60px] top-[6855.54px] w-[99.957px]" />
       <div className="absolute bg-[#d7ffcd] h-[49.912px] left-[calc(66.67%-29.46px)] rounded-[60px] top-[7011.27px] w-[99.957px]" />
       <div className="absolute bg-[#cde4ff] h-[49.912px] left-[calc(66.67%+52.5px)] rounded-[60px] top-[6859.54px] w-[99.957px]" />
@@ -254,27 +256,35 @@ function Group124() {
           </svg>
         </div>
       </div>
-      <Group94 />
-      <Group95 />
-      <Group96 />
+      <TopGradeStarBadge />
+      <BookBadge />
+      <GradeTrendLines />
     </div>
   );
 }
 
 /**
  * Class roster, attendance and gradebook tools.
- *
- * Absolutely positioned against the 1920px landing-page canvas.
  */
 export default function ClassManagementFeature() {
   return (
-    <div className="absolute contents left-[187px] top-[6604px]">
-      <p className="font-poppins font-normal [word-break:break-word] absolute h-[159.718px] leading-[1.8] left-[187px] not-italic text-[#696984] text-[22px] top-[6904.46px] tracking-[0.44px] w-[645.719px]">{`Class provides tools to help run and manage the class such as Class Roster, Attendance, and more. With the Gradebook, teachers can review and grade tests and quizzes in real-time. `}</p>
-      <p className="font-nunito font-bold [word-break:break-word] absolute h-[127.775px] leading-[0] left-[187px] not-italic text-[#2f327d] text-[40px] top-[6756.72px] w-[420.817px]" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100' }}>
-        <span className="font-poppins font-semibold leading-[1.6] text-[#f48c06]">{`Class Management `}</span>
-        <span className="font-poppins font-semibold leading-[1.6]">Tools for Educators</span>
+    <FeatureRow
+      art={
+        <FigmaArt className="w-full" height={600} width={848} x={904} y={6584}>
+          <GradebookCard />
+        </FigmaArt>
+      }
+    >
+      <h3 className="max-w-[421px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+        <span className="text-brand-orange">Class Management</span> Tools for
+        Educators
+      </h3>
+
+      <p className="mt-8 max-w-[646px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+        Class provides tools to help run and manage the class such as Class
+        Roster, Attendance, and more. With the Gradebook, teachers can review and
+        grade tests and quizzes in real-time.
       </p>
-      <Group124 />
-    </div>
+    </FeatureRow>
   );
 }
