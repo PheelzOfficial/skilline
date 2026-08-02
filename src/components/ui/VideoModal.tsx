@@ -4,14 +4,14 @@ type VideoModalProps = {
   isOpen: boolean;
   onClose: () => void;
   /** YouTube video ID */
-  videoId: string;
+  // videoId: string;
 };
 
 /**
  * A modal that displays a YouTube video.
  * Uses a backdrop blur and handles closing via click outside or Escape key.
  */
-export default function VideoModal({ isOpen, onClose, videoId }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
   useEffect(() => {
     if (!isOpen) return;
 

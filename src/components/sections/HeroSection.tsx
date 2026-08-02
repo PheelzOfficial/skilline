@@ -359,19 +359,16 @@ export default function HeroSection() {
               >
                 <span className="relative block h-4 w-6">
                   <span
-                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${
-                      stickyMenuOpen ? "top-[7px] rotate-45" : "top-0"
-                    }`}
+                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${stickyMenuOpen ? "top-[7px] rotate-45" : "top-0"
+                      }`}
                   />
                   <span
-                    className={`absolute left-0 top-[7px] block h-0.5 w-6 rounded bg-brand-ink transition-opacity ${
-                      stickyMenuOpen ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`absolute left-0 top-[7px] block h-0.5 w-6 rounded bg-brand-ink transition-opacity ${stickyMenuOpen ? "opacity-0" : "opacity-100"
+                      }`}
                   />
                   <span
-                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${
-                      stickyMenuOpen ? "top-[7px] -rotate-45" : "top-[14px]"
-                    }`}
+                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${stickyMenuOpen ? "top-[7px] -rotate-45" : "top-[14px]"
+                      }`}
                   />
                 </span>
               </button>
@@ -524,7 +521,7 @@ export default function HeroSection() {
             * edge so the curve trims it, exactly as in the design; the copy
             * opts back out with `self-center`.
             */}
-          <div className="grid gap-10 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-end lg:gap-8 lg:pt-16 xl:gap-16">
+          <div className="grid gap-10 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-end lg:gap-8 lg:pt-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] xl:gap-16">
             <div className="relative max-w-[681px] pb-6 motion-safe:animate-hero-rise lg:self-center lg:pb-16 xl:pb-24">
 
               {/* ── Decorative blobs ─────────────────────────────────── */}
@@ -699,7 +696,7 @@ export default function HeroSection() {
             </div>
 
             <FigmaArt
-              className="mx-auto w-full max-w-[520px] motion-safe:animate-hero-pop lg:max-w-none"
+              className="mx-auto w-full max-w-[600px] motion-safe:animate-hero-pop lg:max-w-none lg:scale-105 lg:origin-bottom xl:scale-110"
               height={ART.height}
               style={{ animationDelay: "160ms" }}
               width={ART.width}
@@ -719,7 +716,7 @@ export default function HeroSection() {
       <VideoModal
         isOpen={videoOpen}
         onClose={() => setVideoOpen(false)}
-        videoId="7QJqQ4R1V2Q" // generic education/elearning intro placeholder
+      // videoId="7QJqQ4R1V2Q" // generic education/elearning intro placeholder
       />
     </header>
   );

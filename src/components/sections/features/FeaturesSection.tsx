@@ -4,6 +4,7 @@ import OneOnOneDiscussionsFeature from "@/components/sections/features/OneOnOneD
 import TeachingToolsFeature from "@/components/sections/features/TeachingToolsFeature";
 import UserInterfaceFeature from "@/components/sections/features/UserInterfaceFeature";
 import Container from "@/components/ui/Container";
+import { useInView } from "@/hooks/useInView";
 
 /**
  * Feature showcase.
@@ -12,19 +13,33 @@ import Container from "@/components/ui/Container";
  * single column below `lg`.
  */
 export default function FeaturesSection() {
+  const { ref, inView } = useInView(0.1);
+
   return (
-    <section className="py-12 lg:py-20" data-name="Our Features" id="features">
+    <section ref={ref} className="py-12 lg:py-20" data-name="Our Features" id="features">
       <Container>
-        <h2 className="text-center font-poppins text-fluid-3xl font-bold leading-[1.3] text-brand-navy">
+        <h2 
+          className={`text-center font-poppins text-fluid-3xl font-bold leading-[1.3] text-brand-navy transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
           Our <span className="text-brand-orange">Features</span>
         </h2>
 
-        <p className="mx-auto mt-4 max-w-[820px] text-center font-poppins text-fluid-md leading-[1.8] text-brand-muted">
+        <p 
+          className={`mx-auto mt-4 max-w-[820px] text-center font-poppins text-fluid-md leading-[1.8] text-brand-muted transition-all duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
           This very extraordinary feature, can make learning activities more
           efficient
         </p>
 
-        <div className="mt-12 flex flex-col gap-16 lg:mt-16 lg:gap-20">
+        <div 
+          className={`mt-12 flex flex-col gap-16 lg:mt-16 lg:gap-20 transition-all duration-1000 delay-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          }`}
+        >
           <UserInterfaceFeature />
           <TeachingToolsFeature />
           <AssessmentsFeature />

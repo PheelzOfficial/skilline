@@ -2,6 +2,7 @@ import svgPaths from "@/assets/svg-paths";
 import Container from "@/components/ui/Container";
 import FigmaArt from "@/components/ui/FigmaArt";
 import imgConfidentTeacherExplainingLessonPupils1 from "@/assets/images/confident-teacher-explaining-lesson-pupils-1.png";
+import { useInView } from "@/hooks/useInView";
 
 function PlayButton() {
   return (
@@ -64,8 +65,10 @@ function Decorations() {
  * under the copy.
  */
 export default function WhatYouCanDoSection() {
+  const { ref, inView } = useInView(0.2);
+
   return (
-    <section className="py-12 lg:py-20" data-name="You Can Do With Skilline">
+    <section ref={ref} className="py-12 lg:py-20" data-name="You Can Do With Skilline">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative max-w-[730px]">
@@ -75,27 +78,43 @@ export default function WhatYouCanDoSection() {
               className="absolute -left-2 -top-6 -z-10 size-12 rounded-full bg-[#F4B767] lg:-left-6 lg:-top-8 lg:size-[73px]"
             />
 
-            <h2 className="font-poppins text-fluid-3xl font-medium leading-[1.3] text-brand-navy">
+            <h2 
+              className={`font-poppins text-fluid-3xl font-medium leading-[1.3] text-brand-navy transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               Everything you can do in a physical classroom,{" "}
               <span className="text-brand-orange">you can do with Skilline</span>
             </h2>
 
-            <p className="mt-5 font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7">
+            <p 
+              className={`mt-5 font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7 transition-all duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               Skilline’s school management software helps traditional and online
               schools manage scheduling, attendance, payments and virtual
               classrooms all in one secure cloud-based system.
             </p>
 
-            <a
-              className="link link-cta mt-7 font-poppins text-fluid-base leading-[1.8] text-brand-muted lg:mt-8"
-              href="#top"
+            <div 
+              className={`mt-7 lg:mt-8 transition-all duration-700 delay-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
             >
-              Learn more
-            </a>
+              <a
+                className="link link-cta font-poppins text-fluid-base leading-[1.8] text-brand-muted"
+                href="#top"
+              >
+                Learn more
+              </a>
+            </div>
           </div>
 
           <FigmaArt
-            className="w-full"
+            className={`w-full transition-all duration-1000 delay-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              inView ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
+            }`}
             height={540}
             width={840}
             x={900}

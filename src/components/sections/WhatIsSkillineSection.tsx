@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import imgRectangle19 from "@/assets/images/rectangle-19.png";
 import imgRectangle21 from "@/assets/images/rectangle-21.png";
+import { useInView } from "@/hooks/useInView";
 
 type AudienceCardProps = {
   cta: string;
@@ -51,18 +52,29 @@ function AudienceCard({
  * Panels sit side by side from `md` up and stack below it.
  */
 export default function WhatIsSkillineSection() {
+  const { ref, inView } = useInView(0.2);
+
   return (
     <section
+      ref={ref}
       className="py-12 lg:py-20"
       data-name="What Is Skilline"
       id="what-is-skilline"
     >
       <Container>
-        <h2 className="text-center font-poppins text-fluid-5xl font-semibold leading-[1.3] text-brand-navy">
+        <h2 
+          className={`text-center font-poppins text-fluid-5xl font-semibold leading-[1.3] text-brand-navy transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
           What is <span className="text-brand-orange">Skilline?</span>
         </h2>
 
-        <p className="mx-auto mt-6 max-w-[1101px] text-center font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted">
+        <p 
+          className={`mx-auto mt-6 max-w-[1101px] text-center font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted transition-all duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
           Skilline is a platform that allows educators to create online classes
           whereby they can store the course materials online; manage assignments,
           quizzes and exams; monitor due dates; grade results and provide
@@ -70,21 +82,33 @@ export default function WhatIsSkillineSection() {
         </p>
 
         <div className="mt-10 grid gap-8 md:grid-cols-2 lg:mt-14 lg:gap-10">
-          <AudienceCard
-            cta="Start a class today"
-            /* Outlined over a photo, so hover fills it rather than lightening it. */
-            ctaClassName="border border-white hover:bg-white/20 hover:backdrop-blur-sm"
-            image={imgRectangle19}
-            overlayClassName="border border-solid border-black bg-[rgba(23,27,65,0.5)]"
-            title="FOR INSTRUCTORS"
-          />
-          <AudienceCard
-            cta="Enter access code"
-            ctaClassName="bg-[rgba(35,189,238,0.9)]"
-            image={imgRectangle21}
-            overlayClassName="bg-[rgba(23,27,65,0.45)]"
-            title="FOR STUDENTS"
-          />
+          <div
+            className={`transition-all duration-700 delay-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              inView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+            }`}
+          >
+            <AudienceCard
+              cta="Start a class today"
+              /* Outlined over a photo, so hover fills it rather than lightening it. */
+              ctaClassName="border border-white hover:bg-white/20 hover:backdrop-blur-sm"
+              image={imgRectangle19}
+              overlayClassName="border border-solid border-black bg-[rgba(23,27,65,0.5)]"
+              title="FOR INSTRUCTORS"
+            />
+          </div>
+          <div
+            className={`transition-all duration-700 delay-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              inView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+            }`}
+          >
+            <AudienceCard
+              cta="Enter access code"
+              ctaClassName="bg-[rgba(35,189,238,0.9)]"
+              image={imgRectangle21}
+              overlayClassName="bg-[rgba(23,27,65,0.45)]"
+              title="FOR STUDENTS"
+            />
+          </div>
         </div>
       </Container>
     </section>
