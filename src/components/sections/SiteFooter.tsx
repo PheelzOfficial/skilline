@@ -1,5 +1,6 @@
-import svgPaths from "@/assets/svg-paths";
 import Container from "@/components/ui/Container";
+import imgLogo from "@/assets/footerlogo.png";
+
 
 const FOOTER_LINKS = ["Careers", "Privacy Policy", "Terms & Conditions"];
 
@@ -13,17 +14,8 @@ export default function SiteFooter() {
     <footer className="bg-brand-ink py-16 lg:py-24" data-name="Footer">
       <Container>
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-          <a className="flex items-center gap-2" href="#top">
-            <span className="relative block size-[56px] lg:size-[83px]">
-              <span className="absolute inset-[2.99%]">
-                <svg className="block size-full" fill="none" height="78.0294" preserveAspectRatio="none" viewBox="0 0 78.0294 78.0294" width="78.0294">
-                  <path d={svgPaths.pde64000} id="Polygon 2" stroke="#26C1F2" strokeWidth="2" />
-                </svg>
-              </span>
-            </span>
-            <span className="-ml-2 font-poppins text-fluid-2xl font-bold tracking-[0.04em] text-white">
-              Skilline
-            </span>
+          <a className="link-logo shrink-0 items-center gap-2" href="#top">
+            <img src={imgLogo} alt="logo" />
           </a>
 
           <span
@@ -49,14 +41,14 @@ export default function SiteFooter() {
           </label>
           <input
             autoComplete="email"
-            className="min-w-0 flex-1 rounded-[80px] border border-solid border-[#83839a] bg-transparent px-8 py-4 text-center font-poppins text-fluid-sm tracking-[0.04em] text-white placeholder:text-[#83839a] sm:text-left"
+            className="min-w-0 flex-1 rounded-[80px] border border-solid border-[#83839a] bg-transparent px-6 py-3.5 text-center font-poppins text-fluid-sm tracking-[0.04em] text-white placeholder:text-[#83839a] sm:text-left"
             id="newsletter-email"
             name="email"
             placeholder="Your Email"
             type="email"
           />
           <button
-            className="rounded-[60px] bg-[linear-gradient(129.6deg,rgb(84,90,231)_19.572%,rgb(57,63,207)_78.846%)] px-10 py-4 font-poppins text-fluid-base font-medium text-white transition-opacity hover:opacity-90"
+            className="btn btn-solid rounded-[60px] bg-[linear-gradient(129.6deg,rgb(84,90,231)_19.572%,rgb(57,63,207)_78.846%)] px-8 py-3.5 font-poppins text-fluid-base font-medium text-white"
             type="submit"
           >
             Subscribe
@@ -69,8 +61,9 @@ export default function SiteFooter() {
               {index > 0 ? (
                 <span aria-hidden="true" className="h-[17px] w-px bg-[#626381]" />
               ) : null}
+              {/* White, not orange: the brand accent all but vanishes on ink. */}
               <a
-                className="font-poppins text-fluid-base tracking-[0.04em] text-[#b2b3cf] transition-colors hover:text-white"
+                className="link font-poppins text-fluid-base tracking-[0.04em] text-[#b2b3cf] [--link-accent:#ffffff]"
                 href="#top"
               >
                 {link}

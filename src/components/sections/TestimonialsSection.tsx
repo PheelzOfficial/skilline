@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
               What They Say?
             </h2>
 
-            <div className="mt-8 flex flex-col gap-6 font-poppins text-fluid-lg leading-[1.6] tracking-[0.02em] text-brand-muted lg:mt-12 lg:gap-10">
+            <div className="mt-5 flex flex-col gap-5 font-poppins text-fluid-lg leading-[1.6] tracking-[0.02em] text-brand-muted lg:mt-7 lg:gap-6">
               <p className="max-w-[607px]">
                 Skilline has got more than 100k positive ratings from our users
                 around the world.
@@ -113,11 +113,13 @@ export default function TestimonialsSection() {
             </div>
 
             <a
-              className="mt-10 inline-flex items-center gap-4 rounded-[80px] border border-solid border-brand-orange py-2 pl-8 pr-2 font-poppins text-fluid-base leading-[1.6] tracking-[0.02em] text-brand-orange transition-colors hover:bg-brand-orange/5 lg:pl-12"
+              className="btn btn-quiet mt-10 gap-4 rounded-[80px] border border-solid border-brand-orange py-1.5 pl-6 pr-1.5 font-poppins text-fluid-base leading-[1.6] tracking-[0.02em] text-brand-orange lg:pl-9"
               href="#top"
             >
               Write your assessment
-              <ArrowBadge />
+              <span className="btn-arrow flex">
+                <ArrowBadge />
+              </span>
             </a>
           </div>
 

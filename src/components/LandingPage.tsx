@@ -8,6 +8,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import WhatIsSkillineSection from "@/components/sections/WhatIsSkillineSection";
 import WhatYouCanDoSection from "@/components/sections/WhatYouCanDoSection";
+import PageLoader from "@/components/ui/PageLoader";
 
 /**
  * Skilline marketing landing page.
@@ -19,6 +20,7 @@ import WhatYouCanDoSection from "@/components/sections/WhatYouCanDoSection";
 export default function LandingPage() {
   return (
     <div className="bg-white">
+      <PageLoader />
       <HeroSection />
       <main>
         <PartnerLogosSection />

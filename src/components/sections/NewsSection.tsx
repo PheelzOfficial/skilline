@@ -46,7 +46,7 @@ export default function NewsSection() {
   return (
     <section className="py-12 lg:py-20" data-name="News">
       <Container>
-        <h2 className="text-center font-nunito text-fluid-3xl font-bold leading-[1.8] text-brand-navy">
+        <h2 className="text-center font-nunito text-fluid-3xl font-bold leading-[1.3] text-brand-navy">
           Lastest News and Resources
         </h2>
 
@@ -54,7 +54,7 @@ export default function NewsSection() {
           See the developments that have occurred to Skillines in the world
         </p>
 
-        <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-2 lg:gap-14">
+        <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-2 lg:gap-12">
           <article>
             <div className="relative aspect-[64/34] overflow-hidden rounded-[20px]">
               <img
@@ -71,7 +71,7 @@ export default function NewsSection() {
             <div className="mt-8">
               <Tag>NEWS</Tag>
 
-              <h3 className="mt-6 max-w-[609px] font-poppins text-fluid-lg font-medium leading-[1.8] text-brand-ink">
+              <h3 className="mt-6 max-w-[609px] font-poppins text-fluid-lg font-medium leading-[1.45] text-brand-ink">
                 Class adds $30 million to its balance sheet for a Zoom-friendly
                 edtech solution
               </h3>
@@ -82,7 +82,7 @@ export default function NewsSection() {
               </p>
 
               <a
-                className="mt-6 inline-block font-poppins text-fluid-sm leading-[1.8] tracking-[0.02em] text-brand-muted underline decoration-solid"
+                className="link link-cta mt-6 font-poppins text-fluid-sm leading-[1.8] tracking-[0.02em] text-brand-muted"
                 href="#top"
               >
                 Read more
@@ -109,7 +109,7 @@ export default function NewsSection() {
                 </div>
 
                 <div>
-                  <h3 className="font-poppins text-fluid-base font-medium leading-[1.8] text-brand-ink">
+                  <h3 className="font-poppins text-fluid-base font-medium leading-[1.45] text-brand-ink">
                     {story.title}
                   </h3>
 

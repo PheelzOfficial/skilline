@@ -225,12 +225,12 @@ export default function TeachingToolsFeature() {
         </FigmaArt>
       }
     >
-      <h3 className="max-w-[393px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+      <h3 className="max-w-[393px] font-poppins text-fluid-4xl font-semibold leading-[1.3] text-brand-navy">
         <span className="text-brand-orange">Tools</span> For Teachers And
         Learners
       </h3>
 
-      <p className="mt-8 max-w-[568px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+      <p className="mt-5 max-w-[568px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7">
         Class has a dynamic set of teaching tools built to be deployed and used
         during class. Teachers can handout assignments in real-time for students
         to complete and submit.

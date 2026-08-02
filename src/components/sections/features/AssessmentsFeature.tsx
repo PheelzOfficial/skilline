@@ -243,11 +243,11 @@ export default function AssessmentsFeature() {
       }
       artFirst
     >
-      <h3 className="max-w-[347px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+      <h3 className="max-w-[347px] font-poppins text-fluid-4xl font-semibold leading-[1.3] text-brand-navy">
         Assessments, <span className="text-brand-orange">Quizzes</span>, Tests
       </h3>
 
-      <p className="mt-8 max-w-[596px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+      <p className="mt-5 max-w-[596px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7">
         Easily launch live assignments, quizzes, and tests. Student results are
         automatically entered in the online gradebook.
       </p>

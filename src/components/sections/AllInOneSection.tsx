@@ -386,7 +386,7 @@ export default function AllInOneSection() {
   return (
     <section className="py-12 lg:py-20" data-name="All-in-one">
       <Container>
-        <h2 className="text-center font-poppins text-fluid-3xl font-bold leading-[1.4] text-brand-navy">
+        <h2 className="text-center font-poppins text-fluid-3xl font-bold leading-[1.3] text-brand-navy">
           All-In-One <span className="text-brand-orange">Cloud Software.</span>
         </h2>
 
@@ -395,7 +395,7 @@ export default function AllInOneSection() {
           tools needed to run a successful school or office.
         </p>
 
-        <ul className="mt-20 grid gap-x-8 gap-y-24 sm:grid-cols-2 lg:mt-28 lg:grid-cols-3 lg:gap-x-10">
+        <ul className="mt-14 grid gap-x-8 gap-y-24 sm:grid-cols-2 lg:mt-28 lg:grid-cols-3 lg:gap-x-10">
           {CARDS.map((card) => (
             <li
               className="relative flex flex-col items-center rounded-[20px] bg-white px-6 pb-10 pt-20 text-center shadow-[0px_10px_60px_0px_rgba(38,45,118,0.08)] sm:px-8 lg:pb-14 lg:pt-24"
@@ -421,7 +421,7 @@ export default function AllInOneSection() {
                 {card.title}
               </h3>
 
-              <p className="mt-6 max-w-[377px] font-poppins text-fluid-sm leading-[1.8] text-brand-muted lg:mt-10">
+              <p className="mt-4 max-w-[377px] font-poppins text-fluid-sm leading-[1.8] text-brand-muted lg:mt-6">
                 {card.body}
               </p>
             </li>

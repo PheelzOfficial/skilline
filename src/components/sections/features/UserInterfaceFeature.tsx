@@ -517,12 +517,12 @@ export default function UserInterfaceFeature() {
       }
       artFirst
     >
-      <h3 className="max-w-[542px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+      <h3 className="max-w-[542px] font-poppins text-fluid-4xl font-semibold leading-[1.3] text-brand-navy">
         A <span className="text-brand-orange">user interface</span> designed for
         the classroom
       </h3>
 
-      <ul className="mt-8 flex flex-col gap-6 lg:mt-12 lg:gap-10">
+      <ul className="mt-5 flex flex-col gap-5 lg:mt-7 lg:gap-6">
         {BULLETS.map((bullet) => (
           <li className="flex items-center gap-4 lg:gap-6" key={bullet.copy}>
             <FigmaArt

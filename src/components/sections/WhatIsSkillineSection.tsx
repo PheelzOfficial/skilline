@@ -35,7 +35,7 @@ function AudienceCard({
           {title}
         </p>
         <a
-          className={`rounded-[80px] px-8 py-3.5 font-poppins text-fluid-base font-medium text-white transition-opacity hover:opacity-90 sm:px-12 lg:py-6 ${ctaClassName}`}
+          className={`btn btn-solid rounded-[80px] px-7 py-3 font-poppins text-fluid-base font-medium text-white sm:px-10 lg:py-3.5 ${ctaClassName}`}
           href="#top"
         >
           {cta}
@@ -58,7 +58,7 @@ export default function WhatIsSkillineSection() {
       id="what-is-skilline"
     >
       <Container>
-        <h2 className="text-center font-poppins text-fluid-5xl font-semibold leading-[1.4] text-brand-navy">
+        <h2 className="text-center font-poppins text-fluid-5xl font-semibold leading-[1.3] text-brand-navy">
           What is <span className="text-brand-orange">Skilline?</span>
         </h2>
 
@@ -69,10 +69,11 @@ export default function WhatIsSkillineSection() {
           students with feedback all in one place.
         </p>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:mt-20 lg:gap-12">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:mt-14 lg:gap-10">
           <AudienceCard
             cta="Start a class today"
-            ctaClassName="border border-white"
+            /* Outlined over a photo, so hover fills it rather than lightening it. */
+            ctaClassName="border border-white hover:bg-white/20 hover:backdrop-blur-sm"
             image={imgRectangle19}
             overlayClassName="border border-solid border-black bg-[rgba(23,27,65,0.5)]"
             title="FOR INSTRUCTORS"

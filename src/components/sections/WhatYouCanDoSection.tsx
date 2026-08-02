@@ -75,19 +75,19 @@ export default function WhatYouCanDoSection() {
               className="absolute -left-2 -top-6 -z-10 size-12 rounded-full bg-[#F4B767] lg:-left-6 lg:-top-8 lg:size-[73px]"
             />
 
-            <h2 className="font-poppins text-fluid-3xl font-medium leading-[1.6] text-brand-navy">
+            <h2 className="font-poppins text-fluid-3xl font-medium leading-[1.3] text-brand-navy">
               Everything you can do in a physical classroom,{" "}
               <span className="text-brand-orange">you can do with Skilline</span>
             </h2>
 
-            <p className="mt-8 font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+            <p className="mt-5 font-poppins text-fluid-md leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7">
               Skilline’s school management software helps traditional and online
               schools manage scheduling, attendance, payments and virtual
               classrooms all in one secure cloud-based system.
             </p>
 
             <a
-              className="mt-8 inline-block font-poppins text-fluid-base leading-[1.8] text-brand-muted underline decoration-solid lg:mt-12"
+              className="link link-cta mt-7 font-poppins text-fluid-base leading-[1.8] text-brand-muted lg:mt-8"
               href="#top"
             >
               Learn more

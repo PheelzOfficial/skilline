@@ -24,7 +24,7 @@ const LOGOS = [
  */
 export default function IntegrationsSection() {
   return (
-    <section className="py-12 lg:py-20" data-name="Integrations">
+    <section className="py-12 lg:py-20" data-name="Integrations" id="integrations">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div
@@ -57,19 +57,19 @@ export default function IntegrationsSection() {
               className="mt-3 block h-px w-20 bg-brand-slate"
             />
 
-            <h2 className="mt-8 max-w-[480px] font-nunito text-fluid-3xl font-bold leading-[1.6] text-brand-navy">
+            <h2 className="mt-5 max-w-[480px] font-nunito text-fluid-3xl font-bold leading-[1.3] text-brand-navy">
               200+ educational tools and platform{" "}
               <span className="text-brand-orange">integrations</span>
             </h2>
 
-            <p className="mt-8 max-w-[687px] font-nunito text-fluid-md leading-[1.8] text-brand-muted">
+            <p className="mt-5 max-w-[687px] font-nunito text-fluid-md leading-[1.8] text-brand-muted">
               Schoology has every tool your classroom needs and comes
               pre-integrated with more than 200+ tools, student information
               systems (SIS), and education platforms.
             </p>
 
             <a
-              className="mt-10 inline-block rounded-[80px] border border-solid border-brand-orange px-10 py-4 font-nunito text-fluid-base leading-[1.8] text-brand-orange transition-colors hover:bg-brand-orange hover:text-white lg:px-14 lg:py-6"
+              className="btn btn-outline mt-10 rounded-[80px] border border-solid border-brand-orange px-8 py-3.5 font-nunito text-fluid-base leading-[1.4] text-brand-orange lg:px-10 lg:py-4"
               href="#top"
             >
               See All Integrations

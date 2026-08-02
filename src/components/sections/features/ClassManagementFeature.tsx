@@ -275,12 +275,12 @@ export default function ClassManagementFeature() {
         </FigmaArt>
       }
     >
-      <h3 className="max-w-[421px] font-poppins text-fluid-4xl font-semibold leading-[1.6] text-brand-navy">
+      <h3 className="max-w-[421px] font-poppins text-fluid-4xl font-semibold leading-[1.3] text-brand-navy">
         <span className="text-brand-orange">Class Management</span> Tools for
         Educators
       </h3>
 
-      <p className="mt-8 max-w-[646px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-12">
+      <p className="mt-5 max-w-[646px] font-poppins text-fluid-base leading-[1.8] tracking-[0.02em] text-brand-muted lg:mt-7">
         Class provides tools to help run and manage the class such as Class
         Roster, Attendance, and more. With the Gradebook, teachers can review and
         grade tests and quizzes in real-time.

@@ -127,9 +127,31 @@ function FacebookLogo() {
 }
 
 /**
+ * One pass of the six logos.
+ *
+ * Two of these sit side by side inside the track; the second is a visual
+ * duplicate that exists only to cover the seam, so it is hidden from assistive
+ * technology and the reading order.
+ */
+function LogoGroup({ duplicate = false }: { duplicate?: boolean }) {
+  return (
+    <ul aria-hidden={duplicate || undefined} className="marquee__group">
+      <GoogleLogo />
+      <NetflixLogo />
+      <AirbnbLogo />
+      <AmazonLogo />
+      <FacebookLogo />
+      <GrabLogo />
+    </ul>
+  );
+}
+
+/**
  * Logos of companies using Skilline.
  *
- * The row wraps: six across on desktop, three on tablet, two on a phone.
+ * The row scrolls continuously at every width — the wrapping grid it replaces
+ * could only show two logos per line on a phone. Hovering pauses it, and a
+ * reduced-motion preference turns it into a row the reader scrolls by hand.
  */
 export default function PartnerLogosSection() {
   return (
@@ -138,16 +160,18 @@ export default function PartnerLogosSection() {
         <p className="text-center font-poppins text-fluid-lg font-medium leading-[1.6] tracking-[0.02em] text-brand-muted">
           Trusted by 5,000+ Companies Worldwide
         </p>
-
-        <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-8 sm:gap-x-12 lg:mt-16 lg:justify-between lg:gap-x-6">
-          <GoogleLogo />
-          <NetflixLogo />
-          <AirbnbLogo />
-          <AmazonLogo />
-          <FacebookLogo />
-          <GrabLogo />
-        </ul>
       </Container>
+
+      {/*
+        * Deliberately outside <Container>: the track runs edge to edge so the
+        * logos fade off both sides of the viewport rather than inside a gutter.
+        */}
+      <div className="marquee mt-10 lg:mt-16">
+        <div className="marquee__track">
+          <LogoGroup />
+          <LogoGroup duplicate />
+        </div>
+      </div>
     </section>
   );
 }

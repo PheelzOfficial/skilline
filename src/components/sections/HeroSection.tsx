@@ -1,464 +1,209 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import svgPaths from "@/assets/svg-paths";
 import Container from "@/components/ui/Container";
 import FigmaArt from "@/components/ui/FigmaArt";
-import {
-  imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1,
-} from "@/assets/image-placeholders";
-import imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin2 from "@/assets/images/lovely-teenage-girl-with-curly-hair-posing-yellow-tshirt-min-2.png";
+import VideoModal from "@/components/ui/VideoModal";
+import imgLovelyTeenageGirl from "@/assets/images/lovely-teenage-girl-with-curly-hair-posing-yellow-tshirt-min-2.png";
 import imgEllipse from "@/assets/images/ellipse.png";
+import imgLogo from "@/assets/navlogo.png";
 
-function JoinNowButton() {
+/*
+ * The hero artwork is drawn in the coordinates of the 1920px Figma canvas and
+ * scaled as a unit by <FigmaArt>. These are the bounds of the crop it occupies.
+ */
+const ART = { x: 863, y: 204, width: 951, height: 914 };
+
+/** Shared look of the four glass cards floating over the photo. */
+const FLOAT_CARD =
+  "absolute flex items-center rounded-[20px] bg-white/80 backdrop-blur-[10px]";
+
+/**
+ * Calendar glyph, 27.5px square.
+ *
+ * The export shipped this as twelve separately positioned SVG fragments; the
+ * nine identical pills are plain rounded rects here and the rest are folded
+ * into one viewBox with transforms.
+ */
+function CalendarIcon() {
+  const columns = [4.9115, 11.7865, 18.6615];
+  const rows = [13.75, 17.68, 21.607];
+
   return (
-    <div className="absolute contents left-[calc(50%+28px)] top-[853px]">
-      <div className="absolute bg-[#d8587e] h-[50px] left-[calc(50%+28px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-988px_-853px] mask-size-[1920px_1118px] rounded-[80px] top-[853px] w-[180px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[normal] left-[calc(50%+76px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1036px_-865px] mask-size-[1920px_1118px] text-[20px] text-white top-[865px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        Join Now
-      </p>
-    </div>
+    <svg className="block size-[27.5px]" fill="none" viewBox="0 0 27.5 27.5">
+      <path d={svgPaths.p17671500} fill="white" transform="translate(5.893 0)" />
+      <path d={svgPaths.p3f97b8c0} fill="white" transform="translate(19.643 0)" />
+      <path d={svgPaths.p341e7e80} fill="white" transform="translate(0 2.946)" />
+      {rows.map((y) =>
+        columns.map((x) => (
+          <rect
+            key={`${x}-${y}`}
+            fill="white"
+            height="1.9643"
+            rx="0.982"
+            width="3.9286"
+            x={x}
+            y={y}
+          />
+        )),
+      )}
+    </svg>
   );
 }
 
-function UpcomingClassCard() {
-  return (
-    <div className="absolute contents left-[calc(41.67%+83px)] top-[744px]">
-      <div className="absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.8)] h-[187px] left-[calc(41.67%+83px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-883px_-744px] mask-size-[1920px_1118px] rounded-[20px] top-[744px] w-[390px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[1.8] left-[calc(50%+28px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-988px_-764px] mask-size-[1920px_1118px] text-[#595959] text-[24px] top-[764px] tracking-[0.48px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        User Experience Class
-      </p>
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[1.8] left-[calc(50%+28px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-988px_-798px] mask-size-[1920px_1118px] text-[#545567] text-[20px] top-[798px] tracking-[0.4px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        Today at 12.00 PM
-      </p>
-      <JoinNowButton />
-      <div className="absolute left-[calc(41.67%+109px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-909px_-770px] mask-size-[1920px_1118px] size-[56px] top-[770px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} data-name="Ellipse">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="56" src={imgEllipse} width="56" />
-      </div>
-      <div className="absolute left-[calc(41.67%+146px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-946px_-809px] mask-size-[1920px_1118px] size-[20px] top-[809px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        <svg className="absolute block inset-0 size-full" fill="none" height="20" preserveAspectRatio="none" viewBox="0 0 20 20" width="20">
-          <circle cx="10" cy="10" fill="#2EBB5E" id="Ellipse 4" r="9" stroke="#FBECD7" strokeWidth="2" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function AdmissionIconTile() {
-  return (
-    <div className="absolute contents left-[calc(75%+10px)] top-[634px]">
-      <div className="absolute bg-[#f88c3d] left-[calc(75%+10px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1450px_-634px] mask-size-[1920px_1118px] rounded-[8px] size-[50px] top-[634px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-    </div>
-  );
-}
-
-function EmailIconBodyShape() {
-  return (
-    <div className="absolute inset-[14.29%_3.05%_47.47%_3.57%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="11.4729" preserveAspectRatio="none" viewBox="0 0 28.0146 11.4729" width="28.0146">
-        <g id="Group">
-          <path d={svgPaths.p2a804a00} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function EmailIconBody() {
-  return (
-    <div className="absolute contents inset-[14.29%_3.05%_47.47%_3.57%]" data-name="Group">
-      <EmailIconBodyShape />
-    </div>
-  );
-}
-
-function EmailIconSealShape() {
-  return (
-    <div className="absolute inset-[20.59%_0_14.29%_0]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="19.5364" preserveAspectRatio="none" viewBox="0 0 30 19.5364" width="30">
-        <g id="Group">
-          <path d={svgPaths.pddd6600} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function EmailIconSeal() {
-  return (
-    <div className="absolute contents inset-[20.59%_0_14.29%_0]" data-name="Group">
-      <EmailIconSealShape />
-    </div>
-  );
-}
-
+/** Sealed-envelope glyph, 30px square. */
 function EmailIcon() {
   return (
-    <div className="absolute left-[calc(75%+20px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1460px_-644px] mask-size-[1920px_1118px] overflow-clip size-[30px] top-[644px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} data-name="email 2 1">
-      <EmailIconBody />
-      <EmailIconSeal />
-    </div>
+    <svg className="block size-[30px]" fill="none" viewBox="0 0 30 30">
+      <path d={svgPaths.p2a804a00} fill="white" transform="translate(1.071 4.287)" />
+      <path d={svgPaths.pddd6600} fill="white" transform="translate(0 6.177)" />
+    </svg>
   );
 }
 
-function AdmissionCompletedCard() {
+/** Green "done" tick used on the avatar and the admission card. */
+function CheckDot({ className }: { className: string }) {
   return (
-    <div className="absolute contents left-[calc(75%-16px)] top-[604px]">
-      <div className="absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.8)] h-[110px] left-[calc(75%-16px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1424px_-604px] mask-size-[1920px_1118px] rounded-[20px] top-[604px] w-[370px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[1.8] left-[calc(75%+84px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1524px_-624px] mask-size-[1920px_1118px] text-[#595959] text-[24px] top-[624px] tracking-[0.48px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        Congratulations
-      </p>
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[1.8] left-[calc(75%+84px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1524px_-658px] mask-size-[1920px_1118px] text-[#545567] text-[20px] top-[658px] tracking-[0.4px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        Your admission completed
-      </p>
-      <AdmissionIconTile />
-      <EmailIcon />
-    </div>
+    <svg className={className} fill="none" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" fill="#4EE381" r="10" />
+      <path
+        d="M6 10.6944L8.88679 14L15 7"
+        stroke="white"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+    </svg>
   );
 }
 
-function BarChartGlyph() {
-  return (
-    <div className="absolute h-[24.15px] left-[calc(83.33%+50.88px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1650.875px_-376.425px] mask-size-[1920px_1118px] top-[376.42px] w-[18.112px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-      <div className="absolute inset-[-8.28%_-6.28%_-8.28%_-11.04%]">
-        <svg className="block size-full" fill="none" height="28.15" preserveAspectRatio="none" viewBox="0 0 21.25 28.15" width="21.25">
-          <g id="Group 8">
-            <path d="M10.625 2V26.15" id="Vector 1" stroke="#F25471" strokeLinecap="round" strokeWidth="4" />
-            <path d="M2 6.3125L2 26.15" id="Vector 3" stroke="#F25471" strokeLinecap="round" strokeWidth="4" />
-            <path d="M19.25 11.4875V26.15" id="Vector 2" stroke="#F25471" strokeLinecap="round" strokeWidth="4" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function StatsBadge() {
-  return (
-    <div className="absolute contents left-[calc(83.33%+25px)] top-[354px]">
-      <div className="absolute bg-[#f3627c] left-[calc(83.33%+25px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1625px_-354px] mask-size-[1920px_1118px] rounded-[14px] shadow-[0px_8px_40px_0px_rgba(210,77,101,0.26)] size-[69px] top-[354px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <div className="absolute bg-white h-[44.85px] left-[calc(83.33%+36.35px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1636.35px_-366.075px] mask-size-[1920px_1118px] rounded-[8px] top-[366.08px] w-[47.3px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <BarChartGlyph />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart1Shape() {
-  return (
-    <div className="absolute inset-[0_71.43%_89.29%_21.43%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="2.94643" preserveAspectRatio="none" viewBox="0 0 1.96427 2.94643" width="1.96427">
-        <g id="Group">
-          <path d={svgPaths.p17671500} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart1() {
-  return (
-    <div className="absolute contents inset-[0_71.43%_89.29%_21.43%]" data-name="Group">
-      <HeroCalendarIconPart1Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart2Shape() {
-  return (
-    <div className="absolute inset-[0_21.43%_89.29%_71.43%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="2.94643" preserveAspectRatio="none" viewBox="0 0 1.96426 2.94643" width="1.96426">
-        <g id="Group">
-          <path d={svgPaths.p3f97b8c0} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart2() {
-  return (
-    <div className="absolute contents inset-[0_21.43%_89.29%_71.43%]" data-name="Group">
-      <HeroCalendarIconPart2Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart3Shape() {
-  return (
-    <div className="absolute inset-[10.71%_0_0_0]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="24.5536" preserveAspectRatio="none" viewBox="0 0 27.5 24.5536" width="27.5">
-        <g id="Group">
-          <path d={svgPaths.p341e7e80} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart3() {
-  return (
-    <div className="absolute contents inset-[10.71%_0_0_0]" data-name="Group">
-      <HeroCalendarIconPart3Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart4Shape() {
-  return (
-    <div className="absolute bottom-[42.86%] left-[17.86%] right-[67.86%] top-1/2" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96433" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96433" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p3e07e700} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart4() {
-  return (
-    <div className="absolute bottom-[42.86%] contents left-[17.86%] right-[67.86%] top-1/2" data-name="Group">
-      <HeroCalendarIconPart4Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart5Shape() {
-  return (
-    <div className="absolute bottom-[42.86%] left-[42.86%] right-[42.86%] top-1/2" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96433" preserveAspectRatio="none" viewBox="0 0 3.9286 1.96433" width="3.9286">
-        <g id="Group">
-          <path d={svgPaths.pd9cea80} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart5() {
-  return (
-    <div className="absolute bottom-[42.86%] contents left-[42.86%] right-[42.86%] top-1/2" data-name="Group">
-      <HeroCalendarIconPart5Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart6Shape() {
-  return (
-    <div className="absolute bottom-[42.86%] left-[67.86%] right-[17.86%] top-1/2" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96433" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96433" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p16dc3080} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart6() {
-  return (
-    <div className="absolute bottom-[42.86%] contents left-[67.86%] right-[17.86%] top-1/2" data-name="Group">
-      <HeroCalendarIconPart6Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart7Shape() {
-  return (
-    <div className="absolute inset-[64.29%_67.86%_28.57%_17.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96432" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96432" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p3f43c800} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart7() {
-  return (
-    <div className="absolute contents inset-[64.29%_67.86%_28.57%_17.86%]" data-name="Group">
-      <HeroCalendarIconPart7Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart8Shape() {
-  return (
-    <div className="absolute inset-[64.29%_42.86%_28.57%_42.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96432" preserveAspectRatio="none" viewBox="0 0 3.9286 1.96432" width="3.9286">
-        <g id="Group">
-          <path d={svgPaths.p1d983c80} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart8() {
-  return (
-    <div className="absolute contents inset-[64.29%_42.86%_28.57%_42.86%]" data-name="Group">
-      <HeroCalendarIconPart8Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart9Shape() {
-  return (
-    <div className="absolute inset-[64.29%_17.86%_28.57%_67.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96432" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96432" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p3436dd00} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart9() {
-  return (
-    <div className="absolute contents inset-[64.29%_17.86%_28.57%_67.86%]" data-name="Group">
-      <HeroCalendarIconPart9Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart10Shape() {
-  return (
-    <div className="absolute inset-[78.57%_67.86%_14.29%_17.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96426" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96426" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p24282400} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart10() {
-  return (
-    <div className="absolute contents inset-[78.57%_67.86%_14.29%_17.86%]" data-name="Group">
-      <HeroCalendarIconPart10Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart11Shape() {
-  return (
-    <div className="absolute inset-[78.57%_42.86%_14.29%_42.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96432" preserveAspectRatio="none" viewBox="0 0 3.9286 1.96432" width="3.9286">
-        <g id="Group">
-          <path d={svgPaths.p10abf740} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart11() {
-  return (
-    <div className="absolute contents inset-[78.57%_42.86%_14.29%_42.86%]" data-name="Group">
-      <HeroCalendarIconPart11Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIconPart12Shape() {
-  return (
-    <div className="absolute inset-[78.57%_17.86%_14.29%_67.86%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="1.96432" preserveAspectRatio="none" viewBox="0 0 3.92859 1.96432" width="3.92859">
-        <g id="Group">
-          <path d={svgPaths.p3ddc3a00} fill="white" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function HeroCalendarIconPart12() {
-  return (
-    <div className="absolute contents inset-[78.57%_17.86%_14.29%_67.86%]" data-name="Group">
-      <HeroCalendarIconPart12Shape />
-    </div>
-  );
-}
-
-function HeroCalendarIcon() {
-  return (
-    <div className="absolute left-[calc(41.67%+134.25px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-934.25px_-445.25px] mask-size-[1920px_1118px] overflow-clip size-[27.5px] top-[445.25px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} data-name="calendar 1">
-      <HeroCalendarIconPart1 />
-      <HeroCalendarIconPart2 />
-      <HeroCalendarIconPart3 />
-      <HeroCalendarIconPart4 />
-      <HeroCalendarIconPart5 />
-      <HeroCalendarIconPart6 />
-      <HeroCalendarIconPart7 />
-      <HeroCalendarIconPart8 />
-      <HeroCalendarIconPart9 />
-      <HeroCalendarIconPart10 />
-      <HeroCalendarIconPart11 />
-      <HeroCalendarIconPart12 />
-    </div>
-  );
-}
-
-function AssistedStudentsIconTile() {
-  return (
-    <div className="absolute contents left-[calc(41.67%+123px)] top-[434px]">
-      <div className="absolute bg-[#23bdee] left-[calc(41.67%+123px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-923px_-434px] mask-size-[1920px_1118px] rounded-[8px] size-[50px] top-[434px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <HeroCalendarIcon />
-    </div>
-  );
-}
-
-function AssistedStudentsCard() {
-  return (
-    <div className="absolute contents left-[calc(41.67%+95px)] top-[409px]">
-      <div className="absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.8)] h-[100px] left-[calc(41.67%+95px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-895px_-409px] mask-size-[1920px_1118px] rounded-[20px] top-[409px] w-[300px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} />
-      <p className="font-nunito font-bold [word-break:break-word] absolute leading-[1.8] left-[calc(50%+45px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1005px_-424px] mask-size-[1920px_1118px] text-[#595959] text-[24px] top-[424px] tracking-[0.48px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        250k
-      </p>
-      <p className="font-nunito font-semibold [word-break:break-word] absolute leading-[1.8] left-[calc(50%+45px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1005px_-458px] mask-size-[1920px_1118px] text-[#545567] text-[20px] top-[458px] tracking-[0.4px] whitespace-nowrap" style={{ fontVariationSettings: '"YTLC" 500, "wdth" 100', maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }}>
-        Assisted Student
-      </p>
-      <AssistedStudentsIconTile />
-    </div>
-  );
-}
-
+/**
+ * The cut-out student photo.
+ *
+ * The source PNG is already transparent, so it gets no backing plate, no card
+ * shadow and no mask — anything of that sort reads as a rectangular box behind
+ * a subject that is supposed to float free. Its lower edge is trimmed by the
+ * banner's curve instead, which is why the crop runs to the canvas bottom.
+ */
 function HeroPhoto() {
   return (
-    <div className="absolute contents left-[calc(41.67%+83px)] top-[224px]" data-name="header-pic">
-      <div className="absolute h-[892px] left-[calc(50%+128px)] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1088px_-224px] mask-size-[1920px_1118px] shadow-[0px_4px_100px_0px_rgba(29,28,24,0.25)] top-[224px] w-[544px]" style={{ maskImage: `url("${imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin1}")` }} data-name="lovely-teenage-girl-with-curly-hair-posing-yellow-tshirt-min 1">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[100.06%] left-[-73.12%] max-w-none top-[-0.03%] w-[246.25%]" src={imgLovelyTeenageGirlWithCurlyHairPosingYellowTshirtMin2} />
-        </div>
-      </div>
-      <UpcomingClassCard />
-      <AdmissionCompletedCard />
-      <StatsBadge />
-      <AssistedStudentsCard />
+    <div className="absolute left-[1088px] top-[224px] h-[894px] w-[544px] overflow-hidden">
+      <img
+        alt=""
+        className="h-full w-full object-cover object-top"
+        src={imgLovelyTeenageGirl}
+      />
     </div>
   );
 }
 
-/** The two stacked status dots that sit on the hero photo. */
-function StatusDots() {
+/** "250k assisted students" pill, upper left of the photo. */
+function AssistedStudentsCard() {
   return (
-    <>
-      <div className="absolute left-[calc(91.67%-2px)] size-[20px] top-[625px]">
-        <svg className="absolute block inset-0 size-full" fill="none" height="20" preserveAspectRatio="none" viewBox="0 0 20 20" width="20">
-          <circle cx="10" cy="10" fill="#C4C4C4" id="Ellipse 2" r="10" />
+    <div
+      className={`${FLOAT_CARD} left-[895px] top-[409px] h-[100px] w-[300px] gap-[32px] pl-[28px] motion-safe:animate-float-a`}
+    >
+      <div className="flex size-[50px] shrink-0 items-center justify-center rounded-[8px] bg-[#23bdee]">
+        <CalendarIcon />
+      </div>
+      <div className="font-nunito leading-[1.6]">
+        <p className="text-[24px] font-bold tracking-[0.48px] text-[#595959]">
+          250k
+        </p>
+        <p className="text-[20px] font-semibold tracking-[0.4px] text-[#545567]">
+          Assisted Student
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** "Congratulations" pill, lower right of the photo. */
+function AdmissionCompletedCard() {
+  return (
+    <div
+      className={`${FLOAT_CARD} left-[1424px] top-[604px] h-[110px] w-[370px] gap-[24px] pl-[26px] motion-safe:animate-float-b`}
+    >
+      <div className="flex size-[50px] shrink-0 items-center justify-center rounded-[8px] bg-[#f88c3d]">
+        <EmailIcon />
+      </div>
+      <div className="font-nunito leading-[1.6]">
+        <p className="text-[24px] font-bold tracking-[0.48px] text-[#595959]">
+          Congratulations
+        </p>
+        <p className="text-[20px] font-semibold tracking-[0.4px] text-[#545567]">
+          Your admission completed
+        </p>
+      </div>
+      <CheckDot className="absolute left-[334px] top-[21px] size-[20px]" />
+    </div>
+  );
+}
+
+/** "User Experience Class" card with the Join Now button, lower left. */
+function UpcomingClassCard() {
+  return (
+    <div
+      className={`${FLOAT_CARD} left-[883px] top-[744px] w-[390px] flex-col items-stretch px-[26px] pb-[28px] pt-[20px] motion-safe:animate-float-c`}
+    >
+      <div className="flex items-center gap-[23px]">
+        <div className="relative size-[56px] shrink-0">
+          <img
+            alt=""
+            className="block size-full rounded-full object-cover"
+            src={imgEllipse}
+          />
+          <CheckDot className="absolute -bottom-[3px] right-[1px] size-[20px]" />
+        </div>
+        <div className="font-nunito leading-[1.6]">
+          <p className="whitespace-nowrap text-[24px] font-bold tracking-[0.48px] text-[#595959]">
+            User Experience Class
+          </p>
+          <p className="whitespace-nowrap text-[20px] font-semibold tracking-[0.4px] text-[#545567]">
+            Today at 12.00 PM
+          </p>
+        </div>
+      </div>
+
+      {/* Art, not a control: the whole crop is aria-hidden, so nothing here
+          may be focusable. */}
+      <div className="ml-[79px] mt-[19px] flex h-[50px] w-[180px] items-center justify-center rounded-[80px] bg-[#d8587e] font-nunito text-[20px] font-bold text-white">
+        Join Now
+      </div>
+    </div>
+  );
+}
+
+/** Small pink tile with a bar chart, top right of the photo. */
+function StatsBadge() {
+  return (
+    <div className="absolute left-[1625px] top-[354px] flex size-[69px] items-center justify-center rounded-[14px] bg-[#f3627c] shadow-[0px_8px_40px_0px_rgba(210,77,101,0.26)] motion-safe:animate-float-d">
+      <div className="flex h-[44.85px] w-[47.3px] items-center justify-center rounded-[8px] bg-white">
+        <svg
+          className="block h-[28.15px] w-[21.25px]"
+          fill="none"
+          viewBox="0 0 21.25 28.15"
+        >
+          <path
+            d="M10.625 2V26.15"
+            stroke="#F25471"
+            strokeLinecap="round"
+            strokeWidth="4"
+          />
+          <path
+            d="M2 6.3125L2 26.15"
+            stroke="#F25471"
+            strokeLinecap="round"
+            strokeWidth="4"
+          />
+          <path
+            d="M19.25 11.4875V26.15"
+            stroke="#F25471"
+            strokeLinecap="round"
+            strokeWidth="4"
+          />
         </svg>
       </div>
-      <div className="absolute left-[calc(91.67%-2px)] size-[20px] top-[625px]">
-        <svg className="absolute block inset-0 size-full" fill="none" height="20" preserveAspectRatio="none" viewBox="0 0 20 20" width="20">
-          <g id="Group 11">
-            <circle cx="10" cy="10" fill="#4EE381" id="Ellipse 3" r="10" />
-            <path d="M6 10.6944L8.88679 14L15 7" id="Vector 4" stroke="white" strokeLinecap="round" strokeWidth="2" />
-          </g>
-        </svg>
-      </div>
-    </>
+    </div>
   );
 }
 
@@ -494,26 +239,39 @@ function PlayBadge() {
 /** Skilline wordmark, shared by the header and the mobile menu. */
 function Wordmark() {
   return (
-    <a className="flex shrink-0 items-center gap-2" href="#top">
-      <span className="relative block size-[52px] lg:size-[64px] xl:size-[83px]">
-        <span className="absolute inset-[2.99%]">
-          <svg className="block size-full" fill="none" height="78.0294" preserveAspectRatio="none" viewBox="0 0 78.0294 78.0294" width="78.0294">
-            <path d={svgPaths.p2ea81f00} fill="#65DAFF" id="Polygon 1" />
-          </svg>
-        </span>
-      </span>
-      {/*
-        * The export tucked the wordmark far enough left that the solid diamond
-        * swallowed the "S". The overlap is kept, just shallow enough to read.
-        */}
-      <span className="-ml-2 font-poppins text-fluid-2xl font-bold tracking-[0.04em] text-[#113c49]">
-        Skilline
-      </span>
+    <a className="link-logo shrink-0 items-center gap-2" href="#top">
+      <img src={imgLogo} alt="logo" />
     </a>
   );
 }
 
-const NAV_LINKS = ["Home", "Careers", "Blog", "About Us"];
+const NAV_LINKS = [
+  { label: "Home", href: "#top" },
+  { label: "About Us", href: "#what-is-skilline" },
+  { label: "Features", href: "#features" },
+  { label: "Integrations", href: "#integrations" },
+];
+
+/**
+ * Tracks whether the page has been scrolled past a given pixel threshold.
+ * Returns true once the threshold is crossed, false once back above it.
+ */
+function useScrolled(threshold = 80) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > threshold);
+    }
+    // Passive listener — never blocks the thread.
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Sync immediately in case the page is restored mid-scroll.
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [threshold]);
+
+  return scrolled;
+}
 
 /**
  * Top navigation and hero banner.
@@ -523,154 +281,446 @@ const NAV_LINKS = ["Home", "Careers", "Blog", "About Us"];
  */
 export default function HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [stickyMenuOpen, setStickyMenuOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const scrolled = useScrolled(80);
 
   return (
-    <header
-      className="relative overflow-hidden pb-16 sm:pb-24 lg:pb-32 xl:pb-40"
-      id="top"
-    >
+    <header className="relative" id="top">
       {/*
-        * Cream banner with the curved lower edge, stretched to the section.
-        * No negative z-index: that would drop it behind the page's white
-        * background. It paints first and the content below is `relative`, so
-        * DOM order alone puts the copy on top.
-        */}
-      <div aria-hidden="true" className="absolute inset-0">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1920 1118">
-          <path d={svgPaths.p181f7680} fill="#FFF3E4" id="Rectangle 4" />
-        </svg>
-      </div>
+       * ── Sticky nav ──────────────────────────────────────────────────────
+       *
+       * A completely separate element from the hero nav, fixed to the top of
+       * the viewport. It slides in from above when the user scrolls past the
+       * hero and retreats back when they return to the top.
+       *
+       * Using CSS `transform` + `transition` (not `top`) gives the browser a
+       * GPU-composited animation that never causes layout recalculation.
+       */}
+      <div
+        aria-label="Site navigation"
+        className={[
+          "fixed inset-x-0 top-0 z-50",
+          "transition-[transform,opacity,box-shadow] duration-500",
+          "ease-[cubic-bezier(0.22,1,0.36,1)]",
+          scrolled
+            ? "translate-y-0 opacity-100 shadow-[0_4px_40px_-8px_rgba(47,50,125,0.18)]"
+            : "-translate-y-full opacity-0 shadow-none",
+        ].join(" ")}
+        role="navigation"
+      >
+        {/* Frosted-glass backing */}
+        <div className="bg-white/85 backdrop-blur-[14px]">
+          <div className="mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-10">
+            <div className="flex items-center justify-between gap-4 py-3 lg:py-4">
+              {/* Logo */}
+              <a className="link-logo shrink-0 items-center gap-2" href="#top">
+                <img src={imgLogo} alt="logo" />
+              </a>
 
-      <Container className="relative">
-        <nav className="flex items-center justify-between gap-4 py-4 lg:py-6">
-          <Wordmark />
+              {/* Desktop links */}
+              <ul className="hidden items-center gap-6 xl:gap-10 lg:flex">
+                {NAV_LINKS.map(({ label, href }) => (
+                  <li key={label}>
+                    <a
+                      className="link font-poppins text-fluid-base tracking-[0.02em] text-brand-ink"
+                      href={href}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-          <ul className="hidden items-center gap-6 xl:gap-10 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <li key={link}>
+              {/* Desktop CTA buttons */}
+              <div className="hidden items-center gap-4 lg:flex">
                 <a
-                  className="font-poppins text-fluid-base tracking-[0.02em] text-brand-ink transition-colors hover:text-brand-orange"
+                  className="btn btn-soft rounded-[80px] bg-white px-6 py-2 font-poppins text-fluid-base font-medium tracking-[0.02em] text-[#6c6c6c] shadow-[0px_20px_24px_0px_rgba(0,0,0,0.03)] hover:text-brand-ink xl:px-9"
                   href="#top"
                 >
-                  {link}
+                  Login
                 </a>
-              </li>
-            ))}
-          </ul>
+                <a
+                  className="btn btn-solid rounded-[80px] bg-brand-orange px-6 py-2 font-poppins text-fluid-base font-medium tracking-[0.02em] text-white xl:px-9"
+                  href="#top"
+                >
+                  Sign Up
+                </a>
+              </div>
 
-          <div className="hidden items-center gap-4 lg:flex">
-            <a
-              className="rounded-[80px] bg-white px-8 py-3 font-poppins text-fluid-base font-medium tracking-[0.02em] text-[#6c6c6c] shadow-[0px_20px_24px_0px_rgba(0,0,0,0.03)] transition-colors hover:text-brand-ink xl:px-12"
-              href="#top"
-            >
-              Login
-            </a>
-            <a
-              className="rounded-[80px] bg-brand-orange px-8 py-3 font-poppins text-fluid-base font-medium tracking-[0.02em] text-white transition-opacity hover:opacity-90 xl:px-12"
-              href="#top"
-            >
-              Sign Up
-            </a>
+              {/* Mobile hamburger */}
+              <button
+                aria-controls="sticky-navigation"
+                aria-expanded={stickyMenuOpen}
+                aria-label="Toggle navigation"
+                className="btn btn-icon size-11 rounded-full bg-brand-navy/5 lg:hidden"
+                onClick={() => setStickyMenuOpen((o) => !o)}
+                type="button"
+              >
+                <span className="relative block h-4 w-6">
+                  <span
+                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${
+                      stickyMenuOpen ? "top-[7px] rotate-45" : "top-0"
+                    }`}
+                  />
+                  <span
+                    className={`absolute left-0 top-[7px] block h-0.5 w-6 rounded bg-brand-ink transition-opacity ${
+                      stickyMenuOpen ? "opacity-0" : "opacity-100"
+                    }`}
+                  />
+                  <span
+                    className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${
+                      stickyMenuOpen ? "top-[7px] -rotate-45" : "top-[14px]"
+                    }`}
+                  />
+                </span>
+              </button>
+            </div>
+
+            {/* Mobile dropdown for the sticky nav */}
+            {stickyMenuOpen ? (
+              <div
+                className="mb-3 rounded-2xl bg-white/90 p-5 shadow-[0px_20px_40px_0px_rgba(0,0,0,0.06)] backdrop-blur-sm lg:hidden"
+                id="sticky-navigation"
+              >
+                <ul className="flex flex-col gap-3">
+                  {NAV_LINKS.map(({ label, href }) => (
+                    <li key={label}>
+                      <a
+                        className="link font-poppins text-fluid-base text-brand-ink"
+                        href={href}
+                        onClick={() => setStickyMenuOpen(false)}
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
+                    className="btn btn-soft rounded-[80px] border border-[#e0e0e0] px-6 py-2.5 font-poppins text-fluid-sm font-medium text-[#6c6c6c]"
+                    href="#top"
+                  >
+                    Login
+                  </a>
+                  <a
+                    className="btn btn-solid rounded-[80px] bg-brand-orange px-6 py-2.5 font-poppins text-fluid-sm font-medium text-white"
+                    href="#top"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+            ) : null}
           </div>
 
-          <button
-            aria-controls="primary-navigation"
-            aria-expanded={menuOpen}
-            aria-label="Toggle navigation"
-            className="flex size-11 items-center justify-center rounded-full bg-white/70 lg:hidden"
-            onClick={() => setMenuOpen((open) => !open)}
-            type="button"
-          >
-            <span className="relative block h-4 w-6">
-              <span
-                className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${menuOpen ? "top-[7px] rotate-45" : "top-0"}`}
-              />
-              <span
-                className={`absolute left-0 top-[7px] block h-0.5 w-6 rounded bg-brand-ink transition-opacity ${menuOpen ? "opacity-0" : "opacity-100"}`}
-              />
-              <span
-                className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${menuOpen ? "top-[7px] -rotate-45" : "top-[14px]"}`}
-              />
-            </span>
-          </button>
-        </nav>
+          {/* Hairline border at the bottom of the sticky bar */}
+          <div className="h-px bg-gradient-to-r from-transparent via-brand-navy/10 to-transparent" />
+        </div>
+      </div>
+      {/* ── End sticky nav ─────────────────────────────────────────────── */}
+      {/*
+        * The cream banner's curved lower edge.
+        *
+        * It used to be a full-bleed SVG stretched with preserveAspectRatio
+        * "none", which distorted the arc at every viewport that wasn't 1920x1118
+        * and — worse — could not clip the artwork sitting on top of it. A pair
+        * of elliptical bottom corners (half the banner wide, a fixed number of
+        * pixels deep) draws the same shape without distortion, and `overflow`
+        * makes the photo obey it for free.
+        */}
+      <div className="relative overflow-hidden rounded-b-[50%_36px] bg-brand-cream sm:rounded-b-[50%_60px] lg:rounded-b-[50%_92px] xl:rounded-b-[50%_128px]">
+        <Container>
+          <nav className="flex items-center justify-between gap-4 py-4 lg:py-6">
+            <Wordmark />
 
-        {menuOpen ? (
-          <div
-            className="mb-4 rounded-2xl bg-white/90 p-5 shadow-[0px_20px_40px_0px_rgba(0,0,0,0.06)] backdrop-blur-sm lg:hidden"
-            id="primary-navigation"
-          >
-            <ul className="flex flex-col gap-3">
-              {NAV_LINKS.map((link) => (
-                <li key={link}>
+            <ul className="hidden items-center gap-6 xl:gap-10 lg:flex">
+              {NAV_LINKS.map(({ label, href }) => (
+                <li key={label}>
                   <a
-                    className="block font-poppins text-fluid-base text-brand-ink"
-                    href="#top"
-                    onClick={() => setMenuOpen(false)}
+                    className="link font-poppins text-fluid-base tracking-[0.02em] text-brand-ink"
+                    href={href}
                   >
-                    {link}
+                    {label}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-wrap gap-3">
+
+            <div className="hidden items-center gap-4 lg:flex">
               <a
-                className="rounded-[80px] border border-[#e0e0e0] px-6 py-2.5 font-poppins text-fluid-sm font-medium text-[#6c6c6c]"
+                className="btn btn-soft rounded-[80px] bg-white px-6 py-2.5 font-poppins text-fluid-base font-medium tracking-[0.02em] text-[#6c6c6c] shadow-[0px_20px_24px_0px_rgba(0,0,0,0.03)] hover:text-brand-ink xl:px-9"
                 href="#top"
               >
                 Login
               </a>
               <a
-                className="rounded-[80px] bg-brand-orange px-6 py-2.5 font-poppins text-fluid-sm font-medium text-white"
+                className="btn btn-solid rounded-[80px] bg-brand-orange px-6 py-2.5 font-poppins text-fluid-base font-medium tracking-[0.02em] text-white xl:px-9"
                 href="#top"
               >
                 Sign Up
               </a>
             </div>
-          </div>
-        ) : null}
 
-        <div className="grid items-center gap-10 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-8 lg:pt-16 xl:gap-16">
-          <div className="max-w-[681px]">
-            <h1 className="font-poppins text-fluid-6xl font-bold leading-tight text-brand-navy">
-              <span className="text-brand-orange">Studying</span> Online is now
-              much easier
-            </h1>
+            <button
+              aria-controls="primary-navigation"
+              aria-expanded={menuOpen}
+              aria-label="Toggle navigation"
+              className="btn btn-icon size-11 rounded-full bg-white/70 lg:hidden"
+              onClick={() => setMenuOpen((open) => !open)}
+              type="button"
+            >
+              <span className="relative block h-4 w-6">
+                <span
+                  className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${menuOpen ? "top-[7px] rotate-45" : "top-0"}`}
+                />
+                <span
+                  className={`absolute left-0 top-[7px] block h-0.5 w-6 rounded bg-brand-ink transition-opacity ${menuOpen ? "opacity-0" : "opacity-100"}`}
+                />
+                <span
+                  className={`absolute left-0 block h-0.5 w-6 rounded bg-brand-ink transition-transform ${menuOpen ? "top-[7px] -rotate-45" : "top-[14px]"}`}
+                />
+              </span>
+            </button>
+          </nav>
 
-            <p className="mt-6 max-w-[523px] font-nunito text-fluid-md leading-[1.6] text-[#464646] lg:mt-10">
-              Skilline is an interesting platform that will teach you in more an
-              interactive way
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-5 lg:mt-12 lg:gap-8">
-              <a
-                className="rounded-[80px] bg-brand-orange px-10 py-4 font-poppins text-fluid-md font-semibold text-white transition-opacity hover:opacity-90 lg:px-14 lg:py-6"
-                href="#top"
-              >
-                Join for free
-              </a>
-
-              <a className="flex items-center gap-4" href="#what-is-skilline">
-                <PlayBadge />
-                <span className="font-poppins text-fluid-md text-brand-ink">
-                  Watch how it works
-                </span>
-              </a>
+          {menuOpen ? (
+            <div
+              className="mb-4 rounded-2xl bg-white/90 p-5 shadow-[0px_20px_40px_0px_rgba(0,0,0,0.06)] backdrop-blur-sm lg:hidden"
+              id="primary-navigation"
+            >
+              <ul className="flex flex-col gap-3">
+                {NAV_LINKS.map(({ label, href }) => (
+                  <li key={label}>
+                    <a
+                      className="link font-poppins text-fluid-base text-brand-ink"
+                      href={href}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  className="btn btn-soft rounded-[80px] border border-[#e0e0e0] px-6 py-2.5 font-poppins text-fluid-sm font-medium text-[#6c6c6c]"
+                  href="#top"
+                >
+                  Login
+                </a>
+                <a
+                  className="btn btn-solid rounded-[80px] bg-brand-orange px-6 py-2.5 font-poppins text-fluid-sm font-medium text-white"
+                  href="#top"
+                >
+                  Sign Up
+                </a>
+              </div>
             </div>
-          </div>
+          ) : null}
 
-          <FigmaArt
-            className="mx-auto w-full max-w-[600px] lg:max-w-none"
-            height={932}
-            width={951}
-            x={863}
-            y={204}
-          >
-            <HeroPhoto />
-            <StatusDots />
-          </FigmaArt>
-        </div>
-      </Container>
+          {/*
+            * `items-end` bottom-anchors the artwork against the banner's lower
+            * edge so the curve trims it, exactly as in the design; the copy
+            * opts back out with `self-center`.
+            */}
+          <div className="grid gap-10 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-end lg:gap-8 lg:pt-16 xl:gap-16">
+            <div className="relative max-w-[681px] pb-6 motion-safe:animate-hero-rise lg:self-center lg:pb-16 xl:pb-24">
+
+              {/* ── Decorative blobs ─────────────────────────────────── */}
+              {/* Soft amber circle behind the heading */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-6 -top-8 -z-10 size-32 rounded-full bg-brand-orange/10 blur-2xl"
+              />
+              {/* Soft cyan blob low-left */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-4 left-10 -z-10 size-24 rounded-full bg-brand-cyan/10 blur-2xl"
+              />
+
+              {/* ── Live-class badge ────────────────────────────────── */}
+              <div
+                className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-orange/20 bg-white px-4 py-1.5 shadow-[0_4px_20px_-6px_rgba(244,140,6,0.25)] motion-safe:animate-hero-rise"
+                style={{ animationDelay: "0ms" }}
+              >
+                {/* Pulsing green dot */}
+                <span className="relative flex size-2.5">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#4EE381] opacity-75" />
+                  <span className="relative inline-flex size-2.5 rounded-full bg-[#4EE381]" />
+                </span>
+                <span className="font-poppins text-xs font-semibold uppercase tracking-widest text-brand-navy">
+                  Live Classes Available
+                </span>
+              </div>
+
+              {/* ── Heading ─────────────────────────────────────────── */}
+              <h1
+                className="font-poppins text-fluid-6xl font-bold leading-tight text-brand-navy motion-safe:animate-hero-rise"
+                style={{ animationDelay: "60ms" }}
+              >
+                <span className="relative inline-block">
+                  <span className="text-brand-orange">Studying</span>
+                  {/* Animated squiggle underline */}
+                  <svg
+                    aria-hidden="true"
+                    className="absolute -bottom-1 left-0 w-full"
+                    fill="none"
+                    height="6"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 120 6"
+                  >
+                    <path
+                      d="M2 4 Q 30 1 60 4 Q 90 7 118 4"
+                      stroke="#f48c06"
+                      strokeLinecap="round"
+                      strokeWidth="2.5"
+                      strokeDasharray="130"
+                      strokeDashoffset="130"
+                      className="motion-safe:[animation:hero-underline_0.8s_0.4s_cubic-bezier(0.22,1,0.36,1)_forwards]"
+                    />
+                  </svg>
+                </span>{" "}
+                Online is now{" "}
+                <span className="relative whitespace-nowrap">
+                  much easier
+                </span>
+              </h1>
+
+              {/* ── Body copy ───────────────────────────────────────── */}
+              <p
+                className="mt-6 max-w-[500px] font-nunito text-fluid-md leading-[1.75] text-[#464646] motion-safe:animate-hero-rise lg:mt-8"
+                style={{ animationDelay: "160ms" }}
+              >
+                Skilline is an interactive learning platform that connects
+                students and educators worldwide — live sessions, recorded
+                lessons, and smart assessments all in one place.
+              </p>
+
+              {/* ── Three trust micro-stats ─────────────────────────── */}
+              <div
+                className="mt-7 flex items-center divide-x divide-brand-navy/10 rounded-2xl bg-white/60 p-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] ring-1 ring-brand-navy/5 backdrop-blur-md motion-safe:animate-hero-rise sm:p-5 lg:mt-8 lg:max-w-[480px]"
+                style={{ animationDelay: "200ms" }}
+              >
+                {[
+                  { value: "250k+", label: "Students", valueColor: "text-brand-cyan" },
+                  { value: "1,200+", label: "Courses", valueColor: "text-brand-orange" },
+                  { value: "98%", label: "Satisfaction", valueColor: "text-[#22a855]" },
+                ].map(({ value, label, valueColor }) => (
+                  <div
+                    key={label}
+                    className="flex flex-1 flex-col items-center px-2 text-center"
+                  >
+                    <span className={`font-poppins text-fluid-xl font-bold leading-none ${valueColor}`}>
+                      {value}
+                    </span>
+                    <span className="mt-1.5 font-nunito text-[11px] font-bold uppercase tracking-wider text-brand-navy/60">
+                      {label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* ── CTAs ────────────────────────────────────────────── */}
+              <div
+                className="mt-8 flex flex-wrap items-center gap-5 motion-safe:animate-hero-rise lg:mt-10 lg:gap-8"
+                style={{ animationDelay: "280ms" }}
+              >
+                <a
+                  className="btn btn-solid rounded-[80px] bg-brand-orange px-8 py-3.5 font-poppins text-fluid-md font-semibold text-white shadow-[0_12px_32px_-8px_rgba(244,140,6,0.5)] lg:px-12 lg:py-4"
+                  href="#top"
+                >
+                  Join for free
+                </a>
+
+                {/*
+                  * Deliberately not a `.btn`: the play badge's glow is drawn
+                  * outside its own box, and `.btn` clips overflow.
+                  */}
+                <button
+                  className="group flex cursor-pointer items-center gap-4 rounded-[80px] outline-offset-4 focus-visible:outline-2 focus-visible:outline-brand-orange"
+                  onClick={() => setVideoOpen(true)}
+                  type="button"
+                >
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-active:scale-95">
+                    <PlayBadge />
+                  </span>
+                  <span className="font-poppins text-fluid-md text-brand-ink transition-colors duration-300 group-hover:text-brand-orange">
+                    Watch how it works
+                  </span>
+                </button>
+              </div>
+
+              {/* ── Social proof avatars ─────────────────────────────── */}
+              <div
+                className="mt-8 flex items-center gap-4 motion-safe:animate-hero-rise"
+                style={{ animationDelay: "340ms" }}
+              >
+                {/* Stacked avatar circles */}
+                <div className="flex -space-x-3">
+                  {[
+                    { bg: "bg-[#f48c06]", initials: "AK" },
+                    { bg: "bg-[#23bdee]", initials: "SJ" },
+                    { bg: "bg-[#d8587e]", initials: "MR" },
+                    { bg: "bg-[#2f327d]", initials: "TL" },
+                  ].map(({ bg, initials }) => (
+                    <span
+                      key={initials}
+                      className={`flex size-9 items-center justify-center rounded-full border-2 border-brand-cream font-poppins text-[11px] font-bold text-white ring-1 ring-white/40 ${bg}`}
+                    >
+                      {initials}
+                    </span>
+                  ))}
+                  <span className="flex size-9 items-center justify-center rounded-full border-2 border-brand-cream bg-white font-poppins text-[10px] font-bold text-brand-navy ring-1 ring-white/40 shadow-sm">
+                    +2k
+                  </span>
+                </div>
+
+                {/* Stars + label */}
+                <div>
+                  {/* Five stars */}
+                  <div className="flex items-center gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg
+                        key={i}
+                        className="size-4 text-[#fba333]"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.062 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69L9.049 2.927z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="mt-0.5 font-nunito text-xs font-semibold text-brand-muted">
+                    <span className="text-brand-navy">4.9</span> from 2,000+ learners
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <FigmaArt
+              className="mx-auto w-full max-w-[520px] motion-safe:animate-hero-pop lg:max-w-none"
+              height={ART.height}
+              style={{ animationDelay: "160ms" }}
+              width={ART.width}
+              x={ART.x}
+              y={ART.y}
+            >
+              <HeroPhoto />
+              <AssistedStudentsCard />
+              <StatsBadge />
+              <AdmissionCompletedCard />
+              <UpcomingClassCard />
+            </FigmaArt>
+          </div>
+        </Container>
+      </div>
+
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        videoId="7QJqQ4R1V2Q" // generic education/elearning intro placeholder
+      />
     </header>
   );
 }
