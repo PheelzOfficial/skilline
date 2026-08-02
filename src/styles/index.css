@@ -1,0 +1,34 @@
+/* @import rules must precede every other statement, so the webfont comes first. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800&display=swap");
+
+/*
+ * `source(none)` disables Tailwind's automatic source detection so it never
+ * scans node_modules; the @source below is the single, explicit scan root.
+ */
+@import "tailwindcss" source(none);
+
+@source "../**/*.{ts,tsx}";
+
+@theme {
+  /*
+   * The Figma export referenced families like "Poppins:SemiBold", which no
+   * browser can resolve. These two utilities (font-poppins / font-nunito)
+   * replace them; weight is expressed with the usual font-* utilities.
+   */
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-nunito: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+}
