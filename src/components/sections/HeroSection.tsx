@@ -4,7 +4,7 @@ import svgPaths from "@/assets/svg-paths";
 import Container from "@/components/ui/Container";
 import FigmaArt from "@/components/ui/FigmaArt";
 import VideoModal from "@/components/ui/VideoModal";
-import imgLovelyTeenageGirl from "@/assets/images/lovely-teenage-girl-with-curly-hair-posing-yellow-tshirt-min-2.png";
+import imgLovelyTeenageGirl from "@/assets/images/hero-girl-optimized.png";
 import imgEllipse from "@/assets/images/ellipse.png";
 import imgLogo from "@/assets/navlogo.png";
 
@@ -90,6 +90,8 @@ function HeroPhoto() {
       <img
         alt=""
         className="h-full w-full object-cover object-top"
+        fetchPriority="high"
+        loading="eager"
         src={imgLovelyTeenageGirl}
       />
     </div>
