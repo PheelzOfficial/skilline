@@ -106,6 +106,16 @@
     }
   }
 
+  /*
+   * The floating hero cards are drawn in 1920px canvas units and scaled down by
+   * <FigmaArt>, which scales their motion too: at a phone's ~0.37 scale a raw
+   * -12px drift lands as ~4px on screen and reads as a static card. Multiplying
+   * by --art-inv-scale cancels that out so the drift is ~12px at every width.
+   *
+   * Clamped at both ends: the lower bound keeps the loop alive if the variable
+   * is ever missing, the upper stops a very narrow viewport from turning the
+   * drift into a lurch that outruns the card's own height.
+   */
   @keyframes hero-float {
 
     0%,
@@ -114,7 +124,13 @@
     }
 
     50% {
-      transform: translateY(-12px);
+      /*
+       * Resolved against the card, not :root — it reads --art-inv-scale off the
+       * <FigmaArt> host it is nested in. Declaring the distance as a :root
+       * custom property instead would substitute the fallback once, at :root,
+       * and inherit that frozen value past every host that sets the real one.
+       */
+      transform: translateY(calc(-1 * clamp(10px, 12px * var(--art-inv-scale, 1), 30px)));
     }
   }
 

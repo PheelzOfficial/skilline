@@ -73,7 +73,17 @@ export default function FigmaArt({
      * window is being dragged.
      */
     const apply = () => {
-      scaler.style.transform = `scale(${host.clientWidth / width})`;
+      const scale = host.clientWidth / width;
+
+      scaler.style.transform = `scale(${scale})`;
+
+      /*
+       * Published for descendants that need to cancel the scale back out.
+       * Anything animating in canvas units gets its motion shrunk by `scale`
+       * too — a 12px drift becomes 4px on a phone, which reads as static — so
+       * those animations multiply by this to stay constant in screen pixels.
+       */
+      host.style.setProperty("--art-inv-scale", scale > 0 ? String(1 / scale) : "1");
     };
 
     apply();

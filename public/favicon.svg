@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <rect width="256" height="256" rx="60" fill="#f48c06"/>
-  <path d="M174.5 83.2c-8-8.5-20.7-13.3-35.6-13.3-28.7 0-51 19.1-51 45.1 0 23.9 18 40.8 46.7 45.1 12.2 1.6 17 4.8 17 10.1 0 6.9-8 11.7-19.1 11.7-14.3 0-26-6.9-31.3-15.4l-24.4 19.1c9.6 15.4 26.5 26 51.5 26 31.3 0 55.2-18.1 55.2-47.2 0-25-19.6-41.4-48.3-45.6-12.7-1.6-17.5-4.2-17.5-9.5 0-5.8 6.4-10.1 16.5-10.1 10.6 0 20.2 4.8 26.5 12.2l24.4-17z" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Skilline">
+  <!-- Brand mark: rounded square rotated 45deg, matching the Skilline logo -->
+  <rect x="37.5" y="37.5" width="181" height="181" rx="30" fill="#65DAFF"
+        transform="rotate(45 128 128)"/>
+  <!-- "S" from the Skilline wordmark -->
+  <path d="M168 92C158 78 144 72 128 72C106 72 90 84 90 102C90 138 166 118 166 154C166 172 150 184 128 184C110 184 94 178 86 164"
+        fill="none" stroke="#113C49" stroke-width="30" stroke-linecap="round"
+        transform="translate(128 128) scale(1.02) translate(-128 -128)"/>
 </svg>
