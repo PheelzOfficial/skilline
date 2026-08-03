@@ -130,7 +130,7 @@
        * custom property instead would substitute the fallback once, at :root,
        * and inherit that frozen value past every host that sets the real one.
        */
-      transform: translateY(calc(-1 * clamp(10px, 12px * var(--art-inv-scale, 1), 30px)));
+      transform: translateY(calc(-1 * clamp(8px, 10px * var(--art-inv-scale, 1), 26px)));
     }
   }
 
