@@ -102,8 +102,7 @@ function NetflixLogo() {
 function AmazonLogo() {
   return (
     <Logo height={46.0923} name="amazon-2 (1) 1" width={153.634}>
-      {/* The export ships this mark upside-down, so it is flipped back here. */}
-      <svg className="absolute block inset-0 size-full rotate-180" fill="none" height="46.0923" preserveAspectRatio="xMidYMid meet" viewBox="0 0 153.634 46.0923" width="153.634">
+      <svg className="absolute block inset-0 size-full" fill="none" height="46.0923" preserveAspectRatio="xMidYMid meet" viewBox="0 0 153.634 46.0923" width="153.634">
         <g id="Group">
           <path clipRule="evenodd" d={svgPaths.p399a6480} fill="#CFCFDE" fillRule="evenodd" id="Vector" />
           <path clipRule="evenodd" d={svgPaths.p1bea89f2} fill="#CFCFDE" fillRule="evenodd" id="Vector_2" />
